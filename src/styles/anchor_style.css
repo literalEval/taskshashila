@@ -22,11 +22,6 @@
     color: white;
 }
 
-/* .addresss-link:hover,
-.addresss-link:active {
-    color: white !important;
-} */
-
 .address-link {
     border: none;
     text-decoration: none;
@@ -34,10 +29,14 @@
 }
 
 .address-link:hover {
-    /* border-bottom: 1px dotted white; */
     text-decoration: underline;
 }
 
 a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
     color: white;
 }

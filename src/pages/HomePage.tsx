@@ -1,6 +1,7 @@
 import React from "react";
 import dep_logo from "../assets/images/dep_logo_new.svg";
 import background_img from "../assets/images/tac-top-shapes.svg";
+import Appreciations from "../components/Appreciations";
 import "../styles/anchor_style.css";
 
 const headerStyle: React.CSSProperties = {
@@ -102,6 +103,7 @@ const HomePage = (props: any): JSX.Element => {
                 </h1>
             </header>
             <section style={aboutUsStyle}></section>
+            <Appreciations></Appreciations>
             <footer style={footerStyle}>
                 <div style={logoStyle}></div>
                 <div className="address-block" style={addressBlockStyle}>
