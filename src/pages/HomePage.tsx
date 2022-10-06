@@ -43,7 +43,7 @@ const headerImgStyle: React.CSSProperties = {
 
 const shlokaStyle: React.CSSProperties = {
     fontSize: "400%",
-    fontWeight: "lighter"
+    fontWeight: "lighter",
 };
 
 const aboutUsStyle: React.CSSProperties = {
@@ -107,7 +107,7 @@ const HomePage = (props: any): JSX.Element => {
             <footer style={footerStyle}>
                 <div style={logoStyle}></div>
                 <div className="address-block" style={addressBlockStyle}>
-                    <span>
+                    <p>
                         Addr: &nbsp;
                         <a
                             className="address-link"
@@ -116,7 +116,7 @@ const HomePage = (props: any): JSX.Element => {
                             Ward No - 20, Gopal Nagar (Gopalpur)<br></br> Hata,
                             Kushinagar<br></br> Uttar Pradesh, 274203
                         </a>
-                    </span>
+                    </p>
                     <p>
                         Email:&nbsp;
                         <a
@@ -130,9 +130,11 @@ const HomePage = (props: any): JSX.Element => {
                 </div>
                 <div>
                     <h2>Contact Us</h2>
-                    <p>Pintoo Dubey: +91 9839525231</p>
-                    <p>Sarita Vaishya: +91 7398290820</p>
-                    <p>Preeti Tiwari: +91 9454264015</p>
+                    <span>Pintoo Dubey: +91 9839525231</span>
+                    <br></br>
+                    <span>Sarita Vaishya: +91 7398290820</span>
+                    <br></br>
+                    <span>Preeti Tiwari: +91 9454264015</span>
                 </div>
             </footer>
             <div style={madeByStyle}>
