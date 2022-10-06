@@ -1,0 +1,43 @@
+.main-header {
+    font-size: 32px;
+}
+
+.medium-link {
+    font-size: larger;
+}
+
+.app-link {
+    color: black;
+    border: 2px solid black;
+    cursor: pointer;
+    padding: 10px 14px;
+
+    transition-property: background-color;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.app-link:hover {
+    background-color: black;
+    color: white;
+}
+
+/* .addresss-link:hover,
+.addresss-link:active {
+    color: white !important;
+} */
+
+.address-link {
+    border: none;
+    text-decoration: none;
+    line-height: 150%;
+}
+
+.address-link:hover {
+    /* border-bottom: 1px dotted white; */
+    text-decoration: underline;
+}
+
+a {
+    color: white;
+}
