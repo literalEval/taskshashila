@@ -42,8 +42,9 @@ const headerImgStyle: React.CSSProperties = {
 };
 
 const shlokaStyle: React.CSSProperties = {
-    fontSize: "450%",
-    fontWeight: "lighter",
+    fontFamily: "Pankaj",
+    fontSize: "96px",
+    wordSpacing: "-14px",
 };
 
 const aboutUsStyle: React.CSSProperties = {
@@ -94,10 +95,17 @@ const HomePage = (props: any): JSX.Element => {
                 <img src={background_img} style={headerImgStyle}></img>
                 <div style={headerHeadStyle}>
                     <a className="app-link medium-link">MENU</a>
-                    <h2 className="main-header">PRIMARY SCHOOL GOPALPUR</h2>
+                    <h1 className="main-header">Primary School Gopalpur</h1>
                     <a className="app-link medium-link">ENROLL NOW</a>
                 </div>
-                <h1 style={shlokaStyle}>विद्यां ददाति विनयं</h1>
+                {/* <h1 style={shlokaStyle}>विद्यां ददाति विनयं</h1> */}
+                {/* Shusha */}
+                {/* <h1 style={shlokaStyle}>ivaVa ddait ivanayaM</h1> */}
+
+                {/* Pankaj */}
+                <p style={shlokaStyle}>fc|kk nnkfr fcuea</p>
+                <a className="app-link medium-link">ENROLL NOW</a>
+                <div></div>
             </header>
             <section style={aboutUsStyle}></section>
             <Appreciations></Appreciations>
