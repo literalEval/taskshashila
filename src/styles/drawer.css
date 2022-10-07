@@ -1,0 +1,31 @@
+.drawer__school-info-bar p {
+    margin: 0px 0px 6px 0px;
+    padding: 0px;
+}
+
+.drawer__link--text,
+.drawer__link {
+    transition-property: all;
+    transition-duration: 300ms;
+}
+
+.drawer__link--text:hover {
+    color: #488ed5;
+    text-decoration: underline;
+}
+
+.drawer__link:hover {
+    color: #488ed5;
+}
+
+.drawer__link-cut {
+    padding: "24px 0%";
+}
+
+.drawer__link-cut:hover {
+    color: #ec4b3e;
+}
+
+.drawer__link-cut .drawer__link--text:hover {
+    color: #ec4b3e;
+}
