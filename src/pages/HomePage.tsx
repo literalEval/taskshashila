@@ -32,17 +32,17 @@ const headerHeadStyle: React.CSSProperties = {
 const headerImgStyle: React.CSSProperties = {
     position: "absolute",
     width: "100%",
-    height: "100%",
+    objectFit: "cover",
 
-    left: 0,
-    right: 0,
-    top: 0,
+    left: "auto",
+    right: "auto",
+    top: -330,
     bottom: 0,
     zIndex: -1,
 };
 
 const shlokaStyle: React.CSSProperties = {
-    fontSize: "400%",
+    fontSize: "450%",
     fontWeight: "lighter",
 };
 
@@ -93,14 +93,11 @@ const HomePage = (props: any): JSX.Element => {
             <header style={headerStyle}>
                 <img src={background_img} style={headerImgStyle}></img>
                 <div style={headerHeadStyle}>
-                    <a className="app-link medium-link">Home</a>
+                    <a className="app-link medium-link">MENU</a>
                     <h2 className="main-header">PRIMARY SCHOOL GOPALPUR</h2>
-                    <a className="app-link medium-link">Enroll Now</a>
+                    <a className="app-link medium-link">ENROLL NOW</a>
                 </div>
-                <h1 style={shlokaStyle}>
-                    विद्या प्रशस्यते लोकैः विद्या सर्वत्र गौरवा। <br></br>
-                    विद्यया लभते सर्वं विद्वान सर्वत्र पूज्यते।।<br></br>
-                </h1>
+                <h1 style={shlokaStyle}>विद्यां ददाति विनयं</h1>
             </header>
             <section style={aboutUsStyle}></section>
             <Appreciations></Appreciations>
