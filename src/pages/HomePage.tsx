@@ -2,6 +2,7 @@ import React from "react";
 import dep_logo from "../assets/images/dep_logo_new.svg";
 import background_img from "../assets/images/tac-top-shapes.svg";
 import Appreciations from "../components/Appreciations";
+import ProgramsSection from "../components/ProgramsSection";
 import "../styles/anchor_style.css";
 
 const headerStyle: React.CSSProperties = {
@@ -42,13 +43,9 @@ const headerImgStyle: React.CSSProperties = {
 };
 
 const shlokaStyle: React.CSSProperties = {
-    fontFamily: "Pankaj",
+    fontFamily: "Samarkan",
     fontSize: "96px",
     wordSpacing: "-14px",
-};
-
-const aboutUsStyle: React.CSSProperties = {
-    height: "100vh",
 };
 
 const footerStyle: React.CSSProperties = {
@@ -61,7 +58,7 @@ const footerStyle: React.CSSProperties = {
     justifyContent: "space-around",
     alignItems: "center",
 
-    backgroundAttachment: "fixed"
+    backgroundAttachment: "fixed",
 };
 
 const logoStyle: React.CSSProperties = {
@@ -96,20 +93,26 @@ const HomePage = (props: any): JSX.Element => {
             <header style={headerStyle}>
                 <img src={background_img} style={headerImgStyle}></img>
                 <div style={headerHeadStyle}>
-                    <a className="app-link medium-link">MENU</a>
-                    <h1 className="main-header">Primary School Gopalpur</h1>
-                    <a className="app-link medium-link">ENROLL NOW</a>
+                    <a className="app-link medium-link">= MENU</a>
+                    <h1 className="main-header">PS Gopalpur</h1>
+                    <a className="app-link medium-link">ACTIVITIES</a>
                 </div>
+                {/* fc|kk nnkfr fcuea */}
                 {/* <h1 style={shlokaStyle}>विद्यां ददाति विनयं</h1> */}
                 {/* Shusha */}
                 {/* <h1 style={shlokaStyle}>ivaVa ddait ivanayaM</h1> */}
 
                 {/* Pankaj */}
-                <p style={shlokaStyle}>fc|kk nnkfr fcuea</p>
-                <a className="app-link medium-link">ENROLL NOW</a>
-                <div></div>
+                {/* <p style={shlokaStyle}>fc|kk nnkfr fcuea</p> */}
+
+                {/* Samarkan */}
+                <p style={shlokaStyle}>vidya dadati vinayam</p>
+                <a className="app-link app-link--filled medium-link">
+                    ENROLL NOW
+                </a>
+                <div style={{ height: "10%" }}></div>
             </header>
-            <section style={aboutUsStyle}></section>
+            <ProgramsSection></ProgramsSection>
             <Appreciations></Appreciations>
             <footer style={footerStyle}>
                 <div style={logoStyle}></div>
@@ -147,6 +150,25 @@ const HomePage = (props: any): JSX.Element => {
             <div style={madeByStyle}>
                 Made with ❤ by &nbsp;<a>Ravidev Pandey</a>
             </div>
+            <section
+                style={{
+                    width: "100%",
+                    height: "6vh",
+                    backgroundColor: "black",
+                    color: "white",
+
+                    position: "absolute",
+                    top: "94vh",
+
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                }}
+            >
+                We are still enrolling for the Fall 2022 semester of After
+                School Classes! Register today while we still have spots in all
+                classes.
+            </section>
         </React.Fragment>
     );
 };
