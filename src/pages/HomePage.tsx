@@ -60,6 +60,8 @@ const footerStyle: React.CSSProperties = {
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
+
+    backgroundAttachment: "fixed"
 };
 
 const logoStyle: React.CSSProperties = {
