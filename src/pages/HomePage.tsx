@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import dep_logo from "../assets/images/dep_logo_new.svg";
 import background_img from "../assets/images/tac-top-shapes.svg";
 import Appreciations from "../components/Appreciations";
+import Drawer from "../components/Drawer";
 import ProgramsSection from "../components/ProgramsSection";
 import "../styles/anchor_style.css";
 
@@ -88,12 +89,19 @@ const addressBlockStyle: React.CSSProperties = {
 };
 
 const HomePage = (props: any): JSX.Element => {
+    let [isDrawerVisible, setIsDrawerVisible] = useState(false);
+
     return (
         <React.Fragment>
             <header style={headerStyle}>
                 <img src={background_img} style={headerImgStyle}></img>
                 <div style={headerHeadStyle}>
-                    <a className="app-link medium-link">= MENU</a>
+                    <a
+                        className="app-link medium-link"
+                        onClick={() => setIsDrawerVisible(!isDrawerVisible)}
+                    >
+                        = MENU
+                    </a>
                     <h1 className="main-header">PS Gopalpur</h1>
                     <a className="app-link medium-link">ACTIVITIES</a>
                 </div>
@@ -112,6 +120,10 @@ const HomePage = (props: any): JSX.Element => {
                 </a>
                 <div style={{ height: "10%" }}></div>
             </header>
+            <Drawer
+                visible={isDrawerVisible}
+                onClose={() => setIsDrawerVisible(false)}
+            ></Drawer>
             <ProgramsSection></ProgramsSection>
             <Appreciations></Appreciations>
             <footer style={footerStyle}>
