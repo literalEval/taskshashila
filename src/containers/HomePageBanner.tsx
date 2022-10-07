@@ -19,7 +19,9 @@ const HomePageBanner = (): JSX.Element => {
 
     return (
         <section
-            className={`home_page_banner home_page_banner--${shouldShow ? "show" : "hide"}`}
+            className={`home_page_banner home_page_banner--${
+                shouldShow ? "show" : "hide"
+            }`}
             style={{
                 width: "100%",
                 height: "6vh",
@@ -32,6 +34,8 @@ const HomePageBanner = (): JSX.Element => {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
+
+                zIndex: "3",
             }}
         >
             We are still enrolling for the Fall 2022 semester of After School

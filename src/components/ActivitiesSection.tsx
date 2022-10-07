@@ -22,14 +22,16 @@ const Activity = (props: any): JSX.Element => {
                 src={props.src}
                 style={{
                     position: "absolute",
-                    zIndex: -1,
+                    zIndex: 0,
                     width: "65%",
                     height: "auto",
                 }}
             ></img>
 
-            <h1>{props.heading}</h1>
-            <a className="app-link medium-link">Learn More</a>
+            <h1 style={{ zIndex: 1 }}>{props.heading}</h1>
+            <a className="app-link medium-link" style={{ zIndex: 1 }}>
+                Learn More
+            </a>
         </div>
     );
 };
@@ -44,6 +46,8 @@ const ActivitiesSection = (props: any): JSX.Element => {
                 alignItems: "center",
 
                 padding: "6% 0% 0% 4%",
+                backgroundColor: "#f1eee8",
+                zIndex: 2,
             }}
         >
             <h1 style={{ fontSize: "76px" }}>Activities</h1>

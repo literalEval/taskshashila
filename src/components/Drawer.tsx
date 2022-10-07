@@ -47,7 +47,7 @@ const Drawer = (props: any): JSX.Element => {
                 position: "absolute",
                 left: props.visible ? 0 : "-20vw",
                 top: 0,
-                zIndex: 2,
+                zIndex: 4,
 
                 transitionProperty: "left",
                 transitionDuration: "300ms",
