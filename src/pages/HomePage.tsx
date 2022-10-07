@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import dep_logo from "../assets/images/dep_logo_new.svg";
 import background_img from "../assets/images/tac-top-shapes.svg";
 import Appreciations from "../components/Appreciations";
 import Drawer from "../components/Drawer";
-import ProgramsSection from "../components/ProgramsSection";
+import ActivitiesSection from "../components/ActivitiesSection";
 import "../styles/anchor_style.css";
+import HomePageBanner from "../containers/HomePageBanner";
 
 const headerStyle: React.CSSProperties = {
     position: "relative",
-    height: "120vh",
+    height: "100vh",
 
     display: "flex",
     flexDirection: "column",
@@ -90,6 +91,7 @@ const addressBlockStyle: React.CSSProperties = {
 
 const HomePage = (props: any): JSX.Element => {
     let [isDrawerVisible, setIsDrawerVisible] = useState(false);
+    let activitiesSectionRef = useRef<HTMLElement>();
 
     return (
         <React.Fragment>
@@ -103,7 +105,15 @@ const HomePage = (props: any): JSX.Element => {
                         = MENU
                     </a>
                     <h1 className="main-header">PS Gopalpur</h1>
-                    <a className="app-link medium-link">ACTIVITIES</a>
+                    <a
+                        className="app-link medium-link"
+                        onClick={() => {
+                            console.log(activitiesSectionRef.current);
+                            activitiesSectionRef.current?.scrollIntoView();
+                        }}
+                    >
+                        ACTIVITIES
+                    </a>
                 </div>
                 {/* fc|kk nnkfr fcuea */}
                 {/* <h1 style={shlokaStyle}>विद्यां ददाति विनयं</h1> */}
@@ -124,7 +134,7 @@ const HomePage = (props: any): JSX.Element => {
                 visible={isDrawerVisible}
                 onClose={() => setIsDrawerVisible(false)}
             ></Drawer>
-            <ProgramsSection></ProgramsSection>
+            <ActivitiesSection m_ref={activitiesSectionRef}></ActivitiesSection>
             <Appreciations></Appreciations>
             <footer style={footerStyle}>
                 <div style={logoStyle}></div>
@@ -162,25 +172,7 @@ const HomePage = (props: any): JSX.Element => {
             <div style={madeByStyle}>
                 Made with ❤ by &nbsp;<a>Ravidev Pandey</a>
             </div>
-            <section
-                style={{
-                    width: "100%",
-                    height: "6vh",
-                    backgroundColor: "black",
-                    color: "white",
-
-                    position: "absolute",
-                    top: "94vh",
-
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                }}
-            >
-                We are still enrolling for the Fall 2022 semester of After
-                School Classes! Register today while we still have spots in all
-                classes.
-            </section>
+            <HomePageBanner />
         </React.Fragment>
     );
 };

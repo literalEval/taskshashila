@@ -4,7 +4,7 @@ import greenBack from "../assets/images/after-school-art.svg";
 import pinkBack from "../assets/images/all-day-art.svg";
 import yellowBack from "../assets/images/summer-camp.svg";
 
-const Program = (props: any): JSX.Element => {
+const Activity = (props: any): JSX.Element => {
     return (
         <div
             style={{
@@ -34,13 +34,16 @@ const Program = (props: any): JSX.Element => {
     );
 };
 
-const ProgramsSection = (): JSX.Element => {
+const ActivitiesSection = (props: any): JSX.Element => {
     return (
         <section
+            ref={props.m_ref}
             style={{
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
+
+                padding: "6% 0% 0% 4%",
             }}
         >
             <h1 style={{ fontSize: "76px" }}>Activities</h1>
@@ -56,15 +59,15 @@ const ProgramsSection = (): JSX.Element => {
                     justifyContent: "space-around",
                     alignItems: "center",
 
-                    padding: "8% 0% 1% 0%",
+                    padding: "12% 0% 1% 0%",
                 }}
             >
-                <Program heading="Summer Camp" src={yellowBack}></Program>
-                <Program heading="Bal Sabha" src={pinkBack}></Program>
-                <Program heading="Plantation" src={greenBack}></Program>
+                <Activity heading="Summer Camp" src={yellowBack}></Activity>
+                <Activity heading="Bal Sabha" src={pinkBack}></Activity>
+                <Activity heading="Plantation" src={greenBack}></Activity>
             </div>
         </section>
     );
 };
 
-export default ProgramsSection;
+export default ActivitiesSection;

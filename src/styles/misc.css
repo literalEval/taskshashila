@@ -1,0 +1,8 @@
+.home_page_banner {
+    transition-property: opacity;
+    transition-duration: 200ms;
+}
+
+.home_page_banner--hide {
+    opacity: 0%;
+}
