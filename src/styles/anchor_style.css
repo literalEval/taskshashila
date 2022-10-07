@@ -1,3 +1,31 @@
+@keyframes button-effect {
+    25% {
+        scale: 1.2;
+    }
+
+    50% {
+        scale: 1;
+    }
+
+    75% {
+        scale: 1.1;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+
+.chad {
+    transition-property: color text-decoration;
+    transition-duration: 200ms;
+    cursor: pointer;
+}
+
+.chad:hover {
+    color: #e990a4;
+}
+
 .main-header {
     padding: 0.1% 1%;
     font-size: 78px;
@@ -14,12 +42,13 @@
     cursor: pointer;
     padding: 10px 14px;
 
-    transition-property: background-color;
+    transition-property: background-color scale;
     transition-duration: 1s;
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .app-link:hover {
+    scale: 1.1;
     background-color: black;
     color: white;
 }
@@ -27,6 +56,11 @@
 .app-link--filled {
     background-color: black;
     color: white;
+}
+
+.app-link--filled:hover {
+    animation-name: button-effect;
+    animation-duration: 800ms;
 }
 
 .address-link {

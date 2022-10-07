@@ -68,11 +68,11 @@ const Highlight = (props: any) => {
 };
 
 const sectionStyle: React.CSSProperties = {
-    // width: "100vw",
-    // backgroundColor: "red",
     height: "auto",
     padding: "10% 20%",
-    overflow: "visible !important",
+
+    backgroundColor: "#f1eee8",
+    zIndex: 2,
 };
 
 const Appreciations = (): JSX.Element => {
