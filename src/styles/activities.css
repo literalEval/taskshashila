@@ -1,0 +1,16 @@
+@keyframes Activity-rotate {
+    50% {
+        transform: rotate(30deg);
+    }
+
+    100% {
+        transform: rotate(-30deg);
+    }
+}
+
+.activity-img {
+    transform: rotate(-30deg);
+    animation-name: Activity-rotate;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import "../../styles/activities.css";
 
 import greenBack from "../../assets/images/after-school-art.svg";
 import pinkBack from "../../assets/images/all-day-art.svg";
@@ -19,6 +20,7 @@ const Activity = (props: any): JSX.Element => {
             }}
         >
             <img
+                className="activity-img"
                 src={props.src}
                 style={{
                     position: "absolute",
