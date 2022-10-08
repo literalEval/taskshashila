@@ -9,7 +9,7 @@ const DrawerItem = (props: any): JSX.Element => {
             }`}
             style={{
                 width: "90%",
-                fontSize: props.size === "small" ? "20px" : "24px",
+                fontSize: props.size === "small" ? "28px" : "36px",
 
                 display: "flex",
                 flexDirection: "row",
@@ -21,7 +21,7 @@ const DrawerItem = (props: any): JSX.Element => {
             <i
                 className={`fa-solid ${props.iconName}`}
                 style={{
-                    fontSize: props.size === "small" ? "14px" : "18px",
+                    fontSize: props.size === "small" ? "18px" : "24px",
                     width: "10%",
                 }}
             ></i>
@@ -42,6 +42,7 @@ const Drawer = (props: any): JSX.Element => {
                 padding: "2% 2%",
 
                 color: "white",
+                fontSize: "20px",
                 backgroundColor: "black",
 
                 position: "fixed",
@@ -75,7 +76,7 @@ const Drawer = (props: any): JSX.Element => {
                 >
                     MENU
                 </DrawerItem>
-                <div style={{ height: "10%", width: "4%" }}></div>
+                <div style={{ height: "10%", width: "4%" }}>&nbsp;</div>
                 <DrawerItem iconName="fa-images" size="small">
                     Gallery
                 </DrawerItem>

@@ -42,8 +42,8 @@ const headerImgStyle: React.CSSProperties = {
 
 const shlokaStyle: React.CSSProperties = {
     fontFamily: "Samarkan",
-    fontSize: "96px",
-    wordSpacing: "-14px",
+    fontSize: "112px",
+    wordSpacing: "-8px",
 };
 
 const Header = (props: any): JSX.Element => {
@@ -51,13 +51,18 @@ const Header = (props: any): JSX.Element => {
         <header style={headerStyle} ref={props.m_ref}>
             <img src={background_img} style={headerImgStyle}></img>
             <div style={headerHeadStyle}>
-                <a
-                    className="app-link medium-link"
-                    onClick={props.onClickMenu}
-                >
+                <a className="app-link medium-link" onClick={props.onClickMenu}>
                     ☰ MENU
                 </a>
-                <h1 className="main-header">PS Gopalpur</h1>
+                <h1
+                    style={{
+                        padding: "0.1% 1%",
+                        fontSize: "108px",
+                        fontFamily: "Beattingvile",
+                    }}
+                >
+                    PS Gopalpur
+                </h1>
                 <a
                     className="app-link medium-link"
                     onClick={props.onClickActivity}

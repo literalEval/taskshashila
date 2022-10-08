@@ -39,10 +39,10 @@ const madeByStyle: React.CSSProperties = {
 };
 
 const Footer = (props: any): JSX.Element => {
-
     return (
         <footer
             style={{
+                fontSize: "22px",
                 backgroundAttachment: "fixed",
                 position: "sticky",
                 zIndex: props.zIndex,
