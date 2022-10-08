@@ -25,17 +25,18 @@ const HomePageBanner = (): JSX.Element => {
             style={{
                 width: "100%",
                 height: "6vh",
+
+                fontSize: "22px",
                 backgroundColor: "black",
                 color: "white",
 
                 position: "absolute",
                 top: "94vh",
+                zIndex: "3",
 
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-
-                zIndex: "3",
             }}
         >
             We are still enrolling for the Fall 2022 semester of After School

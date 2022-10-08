@@ -12,7 +12,7 @@ const GoToTopButton = (props: any): JSX.Element => {
 
                 zIndex: "4",
                 opacity: props.show ? "100%" : "0%",
-                fontSize: "42px",
+                fontSize: "52px",
                 color: "black !important",
             }}
         >

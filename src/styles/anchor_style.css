@@ -38,12 +38,6 @@
     color: #f1d233;
 }
 
-.main-header {
-    padding: 0.1% 1%;
-    font-size: 78px;
-    font-family: "Beattingvile";
-}
-
 .medium-link {
     font-size: larger;
 }
@@ -53,6 +47,7 @@
     border: 2px solid black;
     cursor: pointer;
     padding: 10px 14px;
+    font-size: 26px;
 
     transition-property: background-color scale;
     transition-duration: 1s;

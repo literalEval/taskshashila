@@ -19,6 +19,7 @@ const Quote = (props: any): JSX.Element => {
                 alignItems: "end",
 
                 color: "white",
+                fontSize: "22px",
             }}
         >
             <blockquote style={{ fontSize: "larger" }}>
@@ -37,7 +38,7 @@ const Quote = (props: any): JSX.Element => {
                 <p style={{ padding: "0px", margin: "0px" }}>
                     {props.authName}
                 </p>
-                <p style={{ fontSize: "small" }}>{props.authDesignation}</p>
+                <p style={{ fontSize: "smaller" }}>{props.authDesignation}</p>
             </div>
         </div>
     );
@@ -78,8 +79,8 @@ const Highlight = (props: any) => {
 };
 
 const sectionStyle: React.CSSProperties = {
-    height: "auto",
-    padding: "10% 20%",
+    height: "100vh",
+    padding: "4% 20%",
 
     backgroundColor: "#f1eee8",
     zIndex: 2,
@@ -88,7 +89,7 @@ const sectionStyle: React.CSSProperties = {
 const Appreciations = (): JSX.Element => {
     return (
         <section style={sectionStyle}>
-            <h1 style={{ fontSize: "76px" }}>Expert's Views</h1>
+            <h1 style={{ fontSize: "96px" }}>Expert's Views</h1>
             <div style={{ height: "14vh" }}></div>
             <Carousel style={{ width: "120%", translate: "-10% 0" }}>
                 <Carousel.Item>
