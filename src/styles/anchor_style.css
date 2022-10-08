@@ -27,6 +27,17 @@
     color: white;
 }
 
+.top-button {
+    transition-property: color background-color scale opacity;
+    transition-duration: 300ms;
+    color: #e990a4;
+}
+
+.top-button:hover {
+    scale: 1.2;
+    color: #f1d233;
+}
+
 .main-header {
     padding: 0.1% 1%;
     font-size: 78px;
