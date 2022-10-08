@@ -6,6 +6,8 @@ import Activities from "../components/Activities";
 import HomePageBanner from "../containers/HomePageBanner";
 import Footer from "../components/Footer";
 import "../styles/anchor_style.css";
+import GoToTopButton from "../components/GoToTopButton";
+import useScrollPosition from "../hooks/useScrollPosition";
 
 const headerStyle: React.CSSProperties = {
     position: "relative",
@@ -54,11 +56,26 @@ const shlokaStyle: React.CSSProperties = {
 
 const HomePage = (props: any): JSX.Element => {
     let [isDrawerVisible, setIsDrawerVisible] = useState(false);
+    let [showUpButt, setShowUpButt] = useState(false);
+
     let activitiesSectionRef = useRef<HTMLElement>();
+    let headerSectionRef =
+        useRef<HTMLElement>() as React.RefObject<HTMLElement>;
+    let scrollPos = useScrollPosition();
+
+    useEffect(() => {
+        if ((!showUpButt && scrollPos > 10) || (showUpButt && scrollPos < 10)) {
+            setShowUpButt(!showUpButt);
+        }
+    }, [scrollPos]);
+
+    const scrollToTop = () => {
+        headerSectionRef.current?.scrollIntoView();
+    };
 
     return (
         <React.Fragment>
-            <header style={headerStyle}>
+            <header style={headerStyle} ref={headerSectionRef}>
                 <img src={background_img} style={headerImgStyle}></img>
                 <div style={headerHeadStyle}>
                     <a
@@ -90,6 +107,7 @@ const HomePage = (props: any): JSX.Element => {
                 onClose={() => setIsDrawerVisible(false)}
             />
             <Activities m_ref={activitiesSectionRef} />
+            <GoToTopButton show={showUpButt} onClick={scrollToTop} />
             <Appreciations />
             <HomePageBanner />
             <Footer />
