@@ -119,6 +119,7 @@ const Drawer = (props: any): JSX.Element => {
                     <a
                         className="address-link"
                         href="https://goo.gl/maps/MCRHtueWwg5PidBs5"
+                        target={"_blank"}
                     >
                         Ward No - 20, Gopal Nagar (Gopalpur)<br></br>
                         Hata, Kushinagar<br></br> Uttar Pradesh, 274203

@@ -60,6 +60,7 @@
 }
 
 .app-link--filled:hover {
+    scale: 1;
     animation-name: button-effect;
     animation-duration: 800ms;
 }

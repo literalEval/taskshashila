@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import background_img from "../assets/images/tac-top-shapes.svg";
 import Appreciations from "../components/Appreciations";
 import Drawer from "../components/Drawer";
-import ActivitiesSection from "../components/ActivitiesSection";
+import Activities from "../components/Activities";
 import HomePageBanner from "../containers/HomePageBanner";
 import Footer from "../components/Footer";
 import "../styles/anchor_style.css";
@@ -89,7 +89,7 @@ const HomePage = (props: any): JSX.Element => {
                 visible={isDrawerVisible}
                 onClose={() => setIsDrawerVisible(false)}
             />
-            <ActivitiesSection m_ref={activitiesSectionRef} />
+            <Activities m_ref={activitiesSectionRef} />
             <Appreciations />
             <HomePageBanner />
             <Footer />

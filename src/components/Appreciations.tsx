@@ -84,7 +84,7 @@ const sectionStyle: React.CSSProperties = {
 const Appreciations = (): JSX.Element => {
     return (
         <section style={sectionStyle}>
-            <h1>Expert's Views</h1>
+            <h1 style={{ fontSize: "76px" }}>Expert's Views</h1>
             <div style={{ height: "8vh" }}></div>
             <Carousel style={{ width: "120%", translate: "-10% 0" }}>
                 <Carousel.Item>

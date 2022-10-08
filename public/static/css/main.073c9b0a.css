@@ -5,23 +5,38 @@ body {
     margin: 0;
     background-color: #f1eee8;
 }
+
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New,
         monospace;
 }
+
+::-moz-selection {
+    color: white;
+    background: black;
+}
+
+::selection {
+    color: white;
+    background: black;
+}
+
 .App {
     text-align: center;
 }
+
 .App-logo {
     height: 40vmin;
     pointer-events: none;
 }
+
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {
         -webkit-animation: App-logo-spin 20s linear infinite;
         animation: App-logo-spin 20s linear infinite;
     }
 }
+
 .App-header {
     align-items: center;
     background-color: #282c34;
@@ -32,9 +47,7 @@ code {
     justify-content: center;
     min-height: 100vh;
 }
-/* .App-link {
-    color: #61dafb;
-} */
+
 @-webkit-keyframes App-logo-spin {
     0% {
         -webkit-transform: rotate(0deg);
@@ -45,6 +58,7 @@ code {
         transform: rotate(1turn);
     }
 }
+
 @keyframes App-logo-spin {
     0% {
         -webkit-transform: rotate(0deg);
@@ -55,4 +69,5 @@ code {
         transform: rotate(1turn);
     }
 }
+
 /*# sourceMappingURL=main.073c9b0a.css.map*/

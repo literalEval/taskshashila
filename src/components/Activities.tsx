@@ -36,7 +36,7 @@ const Activity = (props: any): JSX.Element => {
     );
 };
 
-const ActivitiesSection = (props: any): JSX.Element => {
+const Activities = (props: any): JSX.Element => {
     return (
         <section
             ref={props.m_ref}
@@ -74,4 +74,4 @@ const ActivitiesSection = (props: any): JSX.Element => {
     );
 };
 
-export default ActivitiesSection;
+export default Activities;

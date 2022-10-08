@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import dep_logo from "../assets/images/dep_logo_new.svg";
+import dep_logo from "../assets/images/dep_logo.svg";
 import useScrollPosition from "../hooks/useScrollPosition";
 import "../styles/anchor_style.css";
 
