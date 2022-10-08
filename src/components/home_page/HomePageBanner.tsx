@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import useScrollPosition from "../hooks/useScrollPosition";
+import useScrollPosition from "../../hooks/useScrollPosition";
 
-import "../styles/misc.css";
+import "../../styles/misc.css";
 
 const HomePageBanner = (): JSX.Element => {
     let [shouldShow, setShouldShow] = useState(true);

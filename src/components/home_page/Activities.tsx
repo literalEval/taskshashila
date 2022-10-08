@@ -1,8 +1,8 @@
 import React from "react";
 
-import greenBack from "../assets/images/after-school-art.svg";
-import pinkBack from "../assets/images/all-day-art.svg";
-import yellowBack from "../assets/images/summer-camp.svg";
+import greenBack from "../../assets/images/after-school-art.svg";
+import pinkBack from "../../assets/images/all-day-art.svg";
+import yellowBack from "../../assets/images/summer-camp.svg";
 
 const Activity = (props: any): JSX.Element => {
     return (

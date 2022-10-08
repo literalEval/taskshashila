@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
-import dep_logo from "../assets/images/dep_logo.svg";
-import useScrollPosition from "../hooks/useScrollPosition";
-import "../styles/anchor_style.css";
+import dep_logo from "../../assets/images/dep_logo.svg";
+import "../../styles/anchor_style.css";
 
 const footerStyle: React.CSSProperties = {
     height: "35vh",
@@ -40,29 +38,14 @@ const madeByStyle: React.CSSProperties = {
     justifyContent: "center",
 };
 
-const Footer = (): JSX.Element => {
-    let [footerZ, setFooterZ] = useState(1);
-    let scrollPos = useScrollPosition();
-
-    useEffect(() => {
-        if (
-            (footerZ === -1 &&
-                window.innerHeight + window.scrollY >=
-                    document.body.offsetHeight - 10) ||
-            (footerZ === 1 &&
-                window.innerHeight + window.scrollY <
-                    document.body.offsetHeight - 10)
-        ) {
-            setFooterZ(footerZ * -1);
-        }
-    }, [scrollPos]);
+const Footer = (props: any): JSX.Element => {
 
     return (
         <footer
             style={{
                 backgroundAttachment: "fixed",
                 position: "sticky",
-                zIndex: footerZ,
+                zIndex: props.zIndex,
 
                 left: "0",
                 right: "0",
