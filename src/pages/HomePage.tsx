@@ -8,11 +8,13 @@ import Activities from "../components/home_page/Activities";
 import Appreciations from "../components/home_page/Appreciations";
 import Footer from "../components/home_page/Footer";
 import GoToTopButton from "../components/home_page/GoToTopButton";
+import NavBar from "../components/NavBar";
 
 const HomePage = (props: any): JSX.Element => {
     let [isDrawerVisible, setIsDrawerVisible] = useState(false);
     let [showUpButt, setShowUpButt] = useState(false);
     let [footerZ, setFooterZ] = useState(1);
+    let [isHeaderSticky, setIsHeaderSticky] = useState(false);
 
     let activitiesSectionRef = useRef<HTMLElement>();
     let headerSectionRef =
@@ -20,8 +22,17 @@ const HomePage = (props: any): JSX.Element => {
     let scrollPos = useScrollPosition();
 
     useEffect(() => {
+        // console.log(scrollPos);
+
         if ((!showUpButt && scrollPos > 10) || (showUpButt && scrollPos < 10)) {
             setShowUpButt(!showUpButt);
+        }
+
+        if (
+            (!isHeaderSticky && scrollPos > 30) ||
+            (isHeaderSticky && scrollPos < 5)
+        ) {
+            setIsHeaderSticky(!isHeaderSticky);
         }
 
         if (
@@ -37,13 +48,15 @@ const HomePage = (props: any): JSX.Element => {
     }, [scrollPos]);
 
     const scrollToTop = () => {
-        headerSectionRef.current?.scrollIntoView();
+        // headerSectionRef.current?.scrollTo(0, 0);
+        window.scrollTo(0, 0);
     };
 
     return (
         <React.Fragment>
-            <Header
-                m_ref={headerSectionRef}
+            <Header m_ref={headerSectionRef} />
+            <NavBar
+                isHeaderSticky={isHeaderSticky}
                 onClickMenu={() => setIsDrawerVisible(!isDrawerVisible)}
                 onClickActivity={() => {
                     activitiesSectionRef.current?.scrollIntoView();
