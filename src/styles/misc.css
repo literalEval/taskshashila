@@ -7,6 +7,22 @@
     opacity: 0%;
 }
 
+.carousel {
+    border-radius: 10px !important;
+    overflow: visible !important;
+}
+
+.carousel img {
+    overflow: visible !important;
+}
+
+.carousel-item {
+    border-radius: 10px !important;
+    background-color: red !important;
+    overflow: visible !important;
+    clip: unset !important;
+}
+
 /* {fc|kk nnkfr fcuea}
                 /* <h1 style={shlokaStyle}>विद्यां ददाति विनयं</h1> */
 /* Shusha */

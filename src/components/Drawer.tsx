@@ -44,7 +44,7 @@ const Drawer = (props: any): JSX.Element => {
                 color: "white",
                 backgroundColor: "black",
 
-                position: "absolute",
+                position: "fixed",
                 left: props.visible ? 0 : "-20vw",
                 top: 0,
                 zIndex: 4,

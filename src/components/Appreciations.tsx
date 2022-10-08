@@ -2,6 +2,7 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 
 import authImg from "../assets/images/img.jpg";
+import "../styles/misc.css";
 
 const Quote = (): JSX.Element => {
     return (
@@ -60,7 +61,11 @@ const Highlight = (props: any) => {
         >
             <img
                 src={authImg}
-                style={{ width: "40%", height: "auto", overflow: "visible" }}
+                style={{
+                    width: "40%",
+                    height: "auto",
+                    overflow: "visible",
+                }}
             ></img>
             <Quote></Quote>
         </div>
@@ -72,6 +77,7 @@ const sectionStyle: React.CSSProperties = {
     padding: "10% 20%",
 
     backgroundColor: "#f1eee8",
+    // backgroundColor: "red",
     zIndex: 2,
 };
 
@@ -81,18 +87,18 @@ const Appreciations = (): JSX.Element => {
             <h1>Expert's Views</h1>
             <div style={{ height: "8vh" }}></div>
             <Carousel style={{ width: "120%", translate: "-10% 0" }}>
-                <Carousel.Item style={{}}>
-                    <Highlight className="d-block w-100 h-100" color="#a5352b">
+                <Carousel.Item>
+                    <Highlight className="" color="#a5352b">
                         We love Trendyol orange
                     </Highlight>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <Highlight className="d-block w-100 h-100" color="#917e1f">
+                    <Highlight className="" color="#917e1f">
                         This is our github
                     </Highlight>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <Highlight className="d-block w-100 h-100" color="#3e76ac">
+                    <Highlight className="" color="#3e76ac">
                         We love Trendyol green
                     </Highlight>
                 </Carousel.Item>

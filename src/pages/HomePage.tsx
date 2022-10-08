@@ -65,7 +65,7 @@ const HomePage = (props: any): JSX.Element => {
                         className="app-link medium-link"
                         onClick={() => setIsDrawerVisible(!isDrawerVisible)}
                     >
-                        = MENU
+                        ☰ MENU
                     </a>
                     <h1 className="main-header">PS Gopalpur</h1>
                     <a
