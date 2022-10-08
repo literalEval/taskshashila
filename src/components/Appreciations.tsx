@@ -1,14 +1,16 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 
-import authImg from "../assets/images/img.jpg";
+import varsh from "../assets/images/varsh.jpg";
+import upsc from "../assets/images/img.jpg";
+import eskimo from "../assets/images/eskimo.jpg";
 import "../styles/misc.css";
 
-const Quote = (): JSX.Element => {
+const Quote = (props: any): JSX.Element => {
     return (
         <div
             style={{
-                width: "35%",
+                width: "40%",
                 height: "100%",
                 padding: "3% 5% 3% 0",
                 display: "flex",
@@ -33,9 +35,9 @@ const Quote = (): JSX.Element => {
                 }}
             >
                 <p style={{ padding: "0px", margin: "0px" }}>
-                    Ravishankar Pandey
+                    {props.authName}
                 </p>
-                <p style={{ fontSize: "small" }}>UPSC Aspirant</p>
+                <p style={{ fontSize: "small" }}>{props.authDesignation}</p>
             </div>
         </div>
     );
@@ -49,7 +51,6 @@ const Highlight = (props: any) => {
                 height: "50vh",
                 width: "100%",
                 margin: "auto",
-                overflow: "visible !important",
 
                 display: "flex",
                 flexDirection: "row",
@@ -60,14 +61,18 @@ const Highlight = (props: any) => {
             }}
         >
             <img
-                src={authImg}
+                src={props.authImg}
                 style={{
-                    width: "40%",
+                    width: "35%",
                     height: "auto",
                     overflow: "visible",
+                    borderRadius: "12px",
                 }}
             ></img>
-            <Quote></Quote>
+            <Quote
+                authName={props.authName}
+                authDesignation={props.authDesignation}
+            ></Quote>
         </div>
     );
 };
@@ -77,7 +82,6 @@ const sectionStyle: React.CSSProperties = {
     padding: "10% 20%",
 
     backgroundColor: "#f1eee8",
-    // backgroundColor: "red",
     zIndex: 2,
 };
 
@@ -85,20 +89,38 @@ const Appreciations = (): JSX.Element => {
     return (
         <section style={sectionStyle}>
             <h1 style={{ fontSize: "76px" }}>Expert's Views</h1>
-            <div style={{ height: "8vh" }}></div>
+            <div style={{ height: "14vh" }}></div>
             <Carousel style={{ width: "120%", translate: "-10% 0" }}>
                 <Carousel.Item>
-                    <Highlight className="" color="#a5352b">
+                    <Highlight
+                        className=""
+                        color="#a5352b"
+                        authName="Pranshu Varshney"
+                        authDesignation="Chemical Engineer"
+                        authImg={varsh}
+                    >
                         We love Trendyol orange
                     </Highlight>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <Highlight className="" color="#917e1f">
+                    <Highlight
+                        className=""
+                        color="#917e1f"
+                        authName="Prakhar Dubey"
+                        authDesignation="Former Eskimo"
+                        authImg={eskimo}
+                    >
                         This is our github
                     </Highlight>
                 </Carousel.Item>
                 <Carousel.Item>
-                    <Highlight className="" color="#3e76ac">
+                    <Highlight
+                        className=""
+                        color="#3e76ac"
+                        authName="Ravishankar Pandey"
+                        authDesignation="UPSC Aspirant"
+                        authImg={upsc}
+                    >
                         We love Trendyol green
                     </Highlight>
                 </Carousel.Item>

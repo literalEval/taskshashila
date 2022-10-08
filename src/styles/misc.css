@@ -7,18 +7,28 @@
     opacity: 0%;
 }
 
+/* Epic mind fck */
+
 .carousel {
     border-radius: 10px !important;
     overflow: visible !important;
+    clip: unset !important;
 }
 
 .carousel img {
     overflow: visible !important;
 }
 
-.carousel-item {
+.carousel-inner {
+    overflow-x: clip !important;
+    overflow-y: unset !important;
+    overflow-block: visible !important;
+    clip: unset !important;
+}
+
+.carousel-item,
+.slide {
     border-radius: 10px !important;
-    background-color: red !important;
     overflow: visible !important;
     clip: unset !important;
 }
