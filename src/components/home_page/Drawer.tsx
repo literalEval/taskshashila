@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/drawer.css";
+import "../../styles/drawer.css";
 
 const DrawerItem = (props: any): JSX.Element => {
     return (
