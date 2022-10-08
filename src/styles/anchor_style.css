@@ -17,13 +17,14 @@
 }
 
 .chad {
-    transition-property: color text-decoration;
+    transition-property: background-color color text-decoration;
     transition-duration: 200ms;
     cursor: pointer;
+    color: #e990a4;
 }
 
 .chad:hover {
-    color: #e990a4;
+    color: white;
 }
 
 .main-header {
