@@ -1,11 +1,11 @@
 .navbar {
     transition-property: background-color border-bottom;
-    transition-duration: 300ms;
+    transition-duration: 200ms;
 }
 
 .school-name {
     padding: 0px;
     margin: 0px;
     transition-property: font-size;
-    transition-duration: 300ms;
+    transition-duration: 200ms;
 }

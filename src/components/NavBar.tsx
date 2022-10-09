@@ -18,7 +18,7 @@ const NavBar = (props: any): JSX.Element => {
                 justifyContent: "space-around",
                 alignItems: "center",
 
-                marginTop: props.isHeaderSticky ? "0.2%" : "3.2%",
+                marginTop: props.isHeaderSticky ? "0.0%" : "3.2%",
                 zIndex: 4,
 
                 backgroundColor: props.isHeaderSticky
