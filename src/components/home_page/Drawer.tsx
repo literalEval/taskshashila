@@ -16,7 +16,10 @@ const DrawerItem = (props: any): JSX.Element => {
                 alignItems: "center",
                 justifyContent: "left",
             }}
-            onClick={() => props.onClick & props.onClick()}
+            onClick={() => {
+                if (props.onClick) props.onClick();
+                props.onClose();
+            }}
         >
             <i
                 className={`fa-solid ${props.iconName}`}
@@ -72,7 +75,7 @@ const Drawer = (props: any): JSX.Element => {
                 <DrawerItem
                     iconName="fa-sharp fa-circle-xmark"
                     size="large"
-                    onClick={() => props.onClose()}
+                    onClose={props.onClose}
                 >
                     MENU
                 </DrawerItem>
@@ -80,7 +83,12 @@ const Drawer = (props: any): JSX.Element => {
                 <DrawerItem iconName="fa-images" size="small">
                     Gallery
                 </DrawerItem>
-                <DrawerItem iconName="fa-user" size="small">
+                <DrawerItem
+                    iconName="fa-user"
+                    size="small"
+                    onClose={props.onClose}
+                    onClick={props.switchPage}
+                >
                     Faculty
                 </DrawerItem>
                 <DrawerItem iconName="fa-sharp fa-medal" size="small">

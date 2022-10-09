@@ -1,0 +1,23 @@
+@keyframes Page-switch-one {
+    0% {
+        left: -100vw;
+    }
+
+    100% {
+        left: 100vw;
+    }
+}
+
+@keyframes Page-switch-one {
+    0% {
+        left: -100vw;
+    }
+
+    100% {
+        left: 100vw;
+    }
+}
+
+.page-switch {
+    animation: Page-switch-one 1200ms ease-in-out;
+}
