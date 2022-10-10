@@ -2,7 +2,8 @@
   position: relative;
   text-align: center;
 
-  overflow: hidden;
+  overflow-y: visible;
+  overflow-x: clip;
 }
 
 .App-logo {
