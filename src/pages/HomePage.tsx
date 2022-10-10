@@ -55,10 +55,16 @@ const HomePage = (props: any): JSX.Element => {
         window.scrollTo(0, 0);
     };
 
-    const switchPage = () => {
+    const switchPage = (num: number) => {
+
+        if (pageNumber === num) {
+            return;
+        }
+
         setIsPageSwitching(true);
+        window.scrollTo(0, 0);
         setTimeout(() => {
-            setPageNumber(1);
+            setPageNumber(num);
         }, 600);
         setTimeout(() => {
             setIsPageSwitching(false);
@@ -86,12 +92,12 @@ const HomePage = (props: any): JSX.Element => {
                     <Header m_ref={headerSectionRef} />
                     <Activities m_ref={activitiesSectionRef} />
                     <Appreciations />
+                    <HomePageBanner />
                 </React.Fragment>
             )}
 
-            {pageNumber === 1 && <FacultyPage />}
+            {pageNumber === 2 && <FacultyPage />}
             <GoToTopButton show={showUpButt} onClick={scrollToTop} />
-            <HomePageBanner />
             <Footer zIndex={footerZ} />
         </React.Fragment>
     );
