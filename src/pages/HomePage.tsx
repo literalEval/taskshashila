@@ -9,12 +9,13 @@ import Appreciations from "../components/home_page/Appreciations";
 import Footer from "../components/Footer";
 import GoToTopButton from "../components/home_page/GoToTopButton";
 import NavBar from "../components/NavBar";
-import PageSwitch from "../components/PageSwitch";
+import PageSwitch, { getColor } from "../components/PageSwitch";
 import FacultyPage from "../components/home_page/FacultyPage";
 import AboutUsPage from "../components/home_page/AboutUsPage";
 
 const HomePage = (props: any): JSX.Element => {
     let [isPageSwitching, setIsPageSwitching] = useState(false);
+    let [switchColor, setSwitchColor] = useState("#EC483D");
     let [pageNumber, setPageNumber] = useState(0);
     let [isDrawerVisible, setIsDrawerVisible] = useState(false);
     let [showUpButt, setShowUpButt] = useState(false);
@@ -27,8 +28,6 @@ const HomePage = (props: any): JSX.Element => {
     let scrollPos = useScrollPosition();
 
     useEffect(() => {
-        // console.log(scrollPos);
-
         if ((!showUpButt && scrollPos > 10) || (showUpButt && scrollPos < 10)) {
             setShowUpButt(!showUpButt);
         }
@@ -61,6 +60,7 @@ const HomePage = (props: any): JSX.Element => {
             return;
         }
 
+        setSwitchColor(getColor());
         setIsPageSwitching(true);
         window.scrollTo(0, 0);
         setTimeout(() => {
@@ -73,7 +73,7 @@ const HomePage = (props: any): JSX.Element => {
 
     return (
         <React.Fragment>
-            {isPageSwitching && <PageSwitch />}
+            {isPageSwitching && <PageSwitch backgroundColor={switchColor}/>}
             <NavBar
                 isHeaderSticky={isHeaderSticky}
                 onClickMenu={() => setIsDrawerVisible(!isDrawerVisible)}
