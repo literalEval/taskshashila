@@ -11,6 +11,7 @@ import GoToTopButton from "../components/home_page/GoToTopButton";
 import NavBar from "../components/NavBar";
 import PageSwitch from "../components/PageSwitch";
 import FacultyPage from "../components/home_page/FacultyPage";
+import AboutUsPage from "../components/home_page/AboutUsPage";
 
 const HomePage = (props: any): JSX.Element => {
     let [isPageSwitching, setIsPageSwitching] = useState(false);
@@ -56,7 +57,6 @@ const HomePage = (props: any): JSX.Element => {
     };
 
     const switchPage = (num: number) => {
-
         if (pageNumber === num) {
             return;
         }
@@ -97,6 +97,8 @@ const HomePage = (props: any): JSX.Element => {
             )}
 
             {pageNumber === 2 && <FacultyPage />}
+            {pageNumber === 5 && <AboutUsPage />}
+
             <GoToTopButton show={showUpButt} onClick={scrollToTop} />
             <Footer zIndex={footerZ} />
         </React.Fragment>
