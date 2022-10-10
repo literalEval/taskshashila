@@ -1,13 +1,18 @@
 import "../styles/page_switch.css";
 
-const PageSwitch = (): JSX.Element => {
+const colors = ["#EC483D", "#F0CE2E", "#4C93D7", "#43AA5A", "#E991A5"];
+const getColor = (): string => {
+    return colors[Math.floor(Math.random() * 4)];
+};
+
+const PageSwitch = (props: any): JSX.Element => {
     return (
         <div
             className="page-switch"
             style={{
                 width: "100vw",
                 height: "100vh",
-                backgroundColor: "#ED4E41",
+                backgroundColor: props.backgroundColor,
 
                 position: "absolute",
                 left: "-100vw",
@@ -20,3 +25,4 @@ const PageSwitch = (): JSX.Element => {
 };
 
 export default PageSwitch;
+export {getColor};
