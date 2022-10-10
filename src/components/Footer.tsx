@@ -1,5 +1,5 @@
-import dep_logo from "../../assets/images/dep_logo.svg";
-import "../../styles/anchor_style.css";
+import dep_logo from "../assets/images/dep_logo.svg";
+import "../styles/anchor_style.css";
 
 const footerStyle: React.CSSProperties = {
     height: "35vh",

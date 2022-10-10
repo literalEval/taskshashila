@@ -1,6 +1,9 @@
 .App {
   position: relative;
   text-align: center;
+
+  overflow-y: visible;
+  overflow-x: clip;
 }
 
 .App-logo {

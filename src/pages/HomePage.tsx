@@ -6,11 +6,15 @@ import HomePageBanner from "../components/home_page/HomePageBanner";
 import Drawer from "../components/home_page/Drawer";
 import Activities from "../components/home_page/Activities";
 import Appreciations from "../components/home_page/Appreciations";
-import Footer from "../components/home_page/Footer";
+import Footer from "../components/Footer";
 import GoToTopButton from "../components/home_page/GoToTopButton";
 import NavBar from "../components/NavBar";
+import PageSwitch from "../components/PageSwitch";
+import FacultyPage from "../components/home_page/FacultyPage";
 
 const HomePage = (props: any): JSX.Element => {
+    let [isPageSwitching, setIsPageSwitching] = useState(false);
+    let [pageNumber, setPageNumber] = useState(0);
     let [isDrawerVisible, setIsDrawerVisible] = useState(false);
     let [showUpButt, setShowUpButt] = useState(false);
     let [footerZ, setFooterZ] = useState(1);
@@ -48,13 +52,22 @@ const HomePage = (props: any): JSX.Element => {
     }, [scrollPos]);
 
     const scrollToTop = () => {
-        // headerSectionRef.current?.scrollTo(0, 0);
         window.scrollTo(0, 0);
+    };
+
+    const switchPage = () => {
+        setIsPageSwitching(true);
+        setTimeout(() => {
+            setPageNumber(1);
+        }, 600);
+        setTimeout(() => {
+            setIsPageSwitching(false);
+        }, 1200);
     };
 
     return (
         <React.Fragment>
-            <Header m_ref={headerSectionRef} />
+            {isPageSwitching && <PageSwitch />}
             <NavBar
                 isHeaderSticky={isHeaderSticky}
                 onClickMenu={() => setIsDrawerVisible(!isDrawerVisible)}
@@ -65,10 +78,19 @@ const HomePage = (props: any): JSX.Element => {
             <Drawer
                 visible={isDrawerVisible}
                 onClose={() => setIsDrawerVisible(false)}
+                switchPage={switchPage}
             />
-            <Activities m_ref={activitiesSectionRef} />
+
+            {pageNumber === 0 && (
+                <React.Fragment>
+                    <Header m_ref={headerSectionRef} />
+                    <Activities m_ref={activitiesSectionRef} />
+                    <Appreciations />
+                </React.Fragment>
+            )}
+
+            {pageNumber === 1 && <FacultyPage />}
             <GoToTopButton show={showUpButt} onClick={scrollToTop} />
-            <Appreciations />
             <HomePageBanner />
             <Footer zIndex={footerZ} />
         </React.Fragment>

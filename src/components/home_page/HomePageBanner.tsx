@@ -32,7 +32,7 @@ const HomePageBanner = (): JSX.Element => {
 
                 position: "absolute",
                 top: "94vh",
-                zIndex: "3",
+                zIndex: "4",
 
                 display: "flex",
                 flexDirection: "column",

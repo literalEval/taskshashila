@@ -78,17 +78,17 @@ const Highlight = (props: any) => {
     );
 };
 
-const Appreciations = (): JSX.Element => {
-    return (
-        <section
-            style={{
-                height: "100vh",
-                padding: "4% 20%",
+const sectionStyle: React.CSSProperties = {
+    height: "100vh",
+    padding: "4% 20%",
 
-                backgroundColor: "#f1eee8",
-                zIndex: 2,
-            }}
-        >
+    backgroundColor: "#f1eee8",
+    zIndex: 2,
+};
+
+const FacultyPage = (): JSX.Element => {
+    return (
+        <section style={sectionStyle}>
             <h1 style={{ fontSize: "96px" }}>Expert's Views</h1>
             <div style={{ height: "14vh" }}></div>
             <Carousel style={{ width: "120%", translate: "-10% 0" }}>
@@ -130,4 +130,4 @@ const Appreciations = (): JSX.Element => {
     );
 };
 
-export default Appreciations;
+export default FacultyPage;
