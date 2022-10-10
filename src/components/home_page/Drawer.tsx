@@ -17,7 +17,7 @@ const DrawerItem = (props: any): JSX.Element => {
                 justifyContent: "left",
             }}
             onClick={() => {
-                if (props.onClick) props.onClick();
+                if (props.onClick) props.onClick(props.pageNum);
                 props.onClose();
             }}
         >
@@ -80,24 +80,58 @@ const Drawer = (props: any): JSX.Element => {
                     MENU
                 </DrawerItem>
                 <div style={{ height: "10%", width: "4%" }}>&nbsp;</div>
-                <DrawerItem iconName="fa-images" size="small">
+                <DrawerItem
+                    iconName="fa-house"
+                    size="small"
+                    pageNum={0}
+                    onClose={props.onClose}
+                    onClick={props.switchPage}
+                >
+                    Home
+                </DrawerItem>
+                <DrawerItem
+                    iconName="fa-images"
+                    size="small"
+                    pageNum={1}
+                    onClose={props.onClose}
+                    onClick={props.switchPage}
+                >
                     Gallery
                 </DrawerItem>
                 <DrawerItem
                     iconName="fa-user"
                     size="small"
+                    pageNum={2}
                     onClose={props.onClose}
                     onClick={props.switchPage}
                 >
                     Faculty
                 </DrawerItem>
-                <DrawerItem iconName="fa-sharp fa-medal" size="small">
-                    Achiements
+                <DrawerItem
+                    iconName="fa-sharp fa-medal"
+                    size="small"
+                    pageNum={3}
+                    onClose={props.onClose}
+                    onClick={props.switchPage}
+                >
+                    Achievements
                 </DrawerItem>
-                <DrawerItem iconName="fa-sharp fa-ranking-star" size="small">
+                <DrawerItem
+                    iconName="fa-sharp fa-ranking-star"
+                    size="small"
+                    pageNum={4}
+                    onClose={props.onClose}
+                    onClick={props.switchPage}
+                >
                     Results
                 </DrawerItem>
-                <DrawerItem iconName="fa-circle-info" size="small">
+                <DrawerItem
+                    iconName="fa-circle-info"
+                    size="small"
+                    pageNum={5}
+                    onClose={props.onClose}
+                    onClick={props.switchPage}
+                >
                     About Us
                 </DrawerItem>
             </div>

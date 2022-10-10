@@ -49,7 +49,7 @@ const Highlight = (props: any) => {
         <div
             style={{
                 backgroundColor: props.color,
-                height: "50vh",
+                height: "48vh",
                 width: "100%",
                 margin: "auto",
 
@@ -78,20 +78,30 @@ const Highlight = (props: any) => {
     );
 };
 
-const sectionStyle: React.CSSProperties = {
-    height: "100vh",
-    padding: "4% 20%",
-
-    backgroundColor: "#f1eee8",
-    zIndex: 2,
-};
-
 const FacultyPage = (): JSX.Element => {
     return (
-        <section style={sectionStyle}>
-            <h1 style={{ fontSize: "96px" }}>Expert's Views</h1>
-            <div style={{ height: "14vh" }}></div>
-            <Carousel style={{ width: "120%", translate: "-10% 0" }}>
+        <section
+            style={{
+                height: "100vh",
+                padding: "10% 10% 0% 10%",
+
+                backgroundColor: "#f1eee8",
+                zIndex: 2,
+            }}
+        >
+            <h1 style={{ fontSize: "96px", textDecoration: "underline" }}>
+                Our Faculty
+            </h1>
+            <div style={{ height: "5vh" }}></div>
+            {/* <div
+                style={{
+                    backgroundColor: "black",
+                    width: "100%",
+                    height: "4px",
+                }}
+            ></div> */}
+            <div style={{ height: "5vh" }}></div>
+            <Carousel style={{ width: "86%", translate: "7% 0" }}>
                 <Carousel.Item>
                     <Highlight
                         className=""

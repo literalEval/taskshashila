@@ -1,6 +1,6 @@
 .App {
   position: relative;
-  text-align: center;
+  /* text-align: center; */
 
   overflow-y: visible;
   overflow-x: clip;
