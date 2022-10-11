@@ -3,7 +3,7 @@ import useScrollPosition from "../hooks/useScrollPosition";
 
 import Header from "../components/home_page/Header";
 import HomePageBanner from "../components/home_page/HomePageBanner";
-import Drawer from "../components/home_page/Drawer";
+import Drawer from "../components/drawer/Drawer";
 import Activities from "../components/home_page/Activities";
 import Appreciations from "../components/home_page/Appreciations";
 import Footer from "../components/Footer";
@@ -13,6 +13,7 @@ import PageSwitch, { getColor } from "../components/PageSwitch";
 import FacultyPage from "../components/home_page/FacultyPage";
 import AboutUsPage from "../components/home_page/AboutUsPage";
 import AppContext from "../context/app_context";
+import DrawerBack from "../components/drawer/DrawerBack";
 
 const HomePage = (props: any): JSX.Element => {
     let appCtx = useContext(AppContext);
@@ -80,6 +81,10 @@ const HomePage = (props: any): JSX.Element => {
                 onClickMenu={() => setIsDrawerVisible(!isDrawerVisible)}
                 onEnrollNow={() => {}}
             />
+
+            {isDrawerVisible && (
+                <DrawerBack onClick={() => setIsDrawerVisible(false)} />
+            )}
             <Drawer
                 visible={isDrawerVisible}
                 onClose={() => setIsDrawerVisible(false)}
