@@ -89,9 +89,9 @@ const FacultyPage = (): JSX.Element => {
                 zIndex: 2,
             }}
         >
-            <h1 style={{ fontSize: "96px", textDecoration: "underline" }}>
+            {/* <h1 style={{ fontSize: "96px", textDecoration: "underline" }}>
                 Our Faculty
-            </h1>
+            </h1> */}
             <div style={{ height: "5vh" }}></div>
             {/* <div
                 style={{

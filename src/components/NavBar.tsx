@@ -52,8 +52,8 @@ const NavBar = (props: any): JSX.Element => {
             >
                 {pageNames[appCtx.pageNumber]}
             </h1>
-            <a className="app-link medium-link" onClick={props.onClickActivity}>
-                ACTIVITIES
+            <a className="app-link medium-link" onClick={props.onEnrollNow}>
+                ENROLL NOW
             </a>
         </nav>
     );

@@ -36,7 +36,12 @@ const Header = (props: any): JSX.Element => {
         <header style={headerStyle} ref={props.m_ref}>
             <img src={background_img} style={headerImgStyle}></img>
             <p style={shlokaStyle}>vidya dadati vinayam</p>
-            <a className="app-link app-link--filled medium-link">ENROLL NOW</a>
+            <a
+                className="app-link app-link--filled medium-link"
+                onClick={props.onClickActivities}
+            >
+                Activities
+            </a>
             <div style={{ height: "10%" }}></div>
         </header>
     );

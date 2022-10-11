@@ -74,13 +74,11 @@ const HomePage = (props: any): JSX.Element => {
 
     return (
         <React.Fragment>
-            {isPageSwitching && <PageSwitch backgroundColor={switchColor}/>}
+            {isPageSwitching && <PageSwitch backgroundColor={switchColor} />}
             <NavBar
                 isHeaderSticky={isHeaderSticky}
                 onClickMenu={() => setIsDrawerVisible(!isDrawerVisible)}
-                onClickActivity={() => {
-                    activitiesSectionRef.current?.scrollIntoView();
-                }}
+                onEnrollNow={() => {}}
             />
             <Drawer
                 visible={isDrawerVisible}
@@ -90,7 +88,12 @@ const HomePage = (props: any): JSX.Element => {
 
             {appCtx.pageNumber === 0 && (
                 <React.Fragment>
-                    <Header m_ref={headerSectionRef} />
+                    <Header
+                        m_ref={headerSectionRef}
+                        onClickActivities={() =>
+                            activitiesSectionRef.current?.scrollIntoView()
+                        }
+                    />
                     <Activities m_ref={activitiesSectionRef} />
                     <Appreciations />
                     <HomePageBanner />
