@@ -29,3 +29,8 @@
 .drawer__link-cut .drawer__link--text:hover {
     color: #ec4b3e;
 }
+
+.drawer__link-login:hover,
+.drawer__link-login .drawer__link--text:hover {
+    color: #41a858;
+}

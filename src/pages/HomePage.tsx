@@ -16,6 +16,7 @@ import AppContext from "../context/app_context";
 import DrawerBack from "../components/drawer/DrawerBack";
 import AppModal from "../components/Modal";
 import EnrollNowPage from "../components/home_page/EnrollNowPage";
+import LoginPage from "../components/home_page/LoginPage";
 
 const HomePage = (props: any): JSX.Element => {
     let appCtx = useContext(AppContext);
@@ -82,7 +83,7 @@ const HomePage = (props: any): JSX.Element => {
             <NavBar
                 isHeaderSticky={isHeaderSticky}
                 onClickMenu={() => setIsDrawerVisible(!isDrawerVisible)}
-                onEnrollNow={() => switchPage(6)}
+                onEnrollNow={() => switchPage(7)}
             />
 
             {isDrawerVisible && (
@@ -110,7 +111,8 @@ const HomePage = (props: any): JSX.Element => {
 
             {appCtx.pageNumber === 2 && <FacultyPage />}
             {appCtx.pageNumber === 5 && <AboutUsPage />}
-            {appCtx.pageNumber === 6 && <EnrollNowPage />}
+            {appCtx.pageNumber === 6 && <LoginPage />}
+            {appCtx.pageNumber === 7 && <EnrollNowPage />}
 
             <GoToTopButton show={showUpButt} onClick={scrollToTop} />
             <Footer zIndex={footerZ} />

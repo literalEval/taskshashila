@@ -10,6 +10,8 @@ const pageNames: Array<String> = [
     "Achievements",
     "Results",
     "About Us",
+    "Admin Login",
+    "Enroll Now",
 ];
 
 const NavBar = (props: any): JSX.Element => {

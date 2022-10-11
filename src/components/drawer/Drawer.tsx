@@ -6,7 +6,7 @@ const DrawerItem = (props: any): JSX.Element => {
         <div
             className={`drawer__link ${
                 props.size === "small" ? "" : "drawer__link-cut"
-            }`}
+            } ${props.pageNum === 6 ? "drawer__link-login" : ""}`}
             style={{
                 width: "90%",
                 fontSize: props.size === "small" ? "28px" : "36px",
@@ -133,6 +133,15 @@ const Drawer = (props: any): JSX.Element => {
                     onClick={props.switchPage}
                 >
                     About Us
+                </DrawerItem>
+                <DrawerItem
+                    iconName="fa-lock"
+                    size="small"
+                    pageNum={6}
+                    onClose={props.onClose}
+                    onClick={props.switchPage}
+                >
+                    Login
                 </DrawerItem>
             </div>
 

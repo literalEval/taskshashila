@@ -1,0 +1,19 @@
+.app-input-line {
+    width: 80%;
+    height: 3rem;
+
+    margin: 2% 0%;
+    padding: 0% 4%;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px 2px #4BA53F;
+    background-color: rgba(255, 255, 255, 0.8);
+
+    outline: none;
+    border: none;
+    transition-property: all;
+    transition-duration: 300ms;
+}
+
+.app-input-line:focus {
+    box-shadow: 3px 3px 3px 3px #E993A6;
+}
