@@ -1,7 +1,20 @@
+import { useContext } from "react";
+import AppContext from "../context/app_context";
 import "../styles/anchor_style.css";
 import "../styles/navbar.css";
 
+const pageNames: Array<String> = [
+    "PS Gopalpur",
+    "Gallery",
+    "Faculty",
+    "Achievements",
+    "Results",
+    "About Us",
+];
+
 const NavBar = (props: any): JSX.Element => {
+    let appCtx = useContext(AppContext);
+
     return (
         <nav
             className={`navbar ${props.isHeaderSticky ? "sticky" : ""}`}
@@ -37,7 +50,7 @@ const NavBar = (props: any): JSX.Element => {
                     fontFamily: "Beattingvile",
                 }}
             >
-                PS Gopalpur
+                {pageNames[appCtx.pageNumber]}
             </h1>
             <a className="app-link medium-link" onClick={props.onClickActivity}>
                 ACTIVITIES
