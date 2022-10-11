@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import useScrollPosition from "../hooks/useScrollPosition";
 
 import Header from "../components/home_page/Header";
@@ -12,11 +12,12 @@ import NavBar from "../components/NavBar";
 import PageSwitch, { getColor } from "../components/PageSwitch";
 import FacultyPage from "../components/home_page/FacultyPage";
 import AboutUsPage from "../components/home_page/AboutUsPage";
+import AppContext from "../context/app_context";
 
 const HomePage = (props: any): JSX.Element => {
+    let appCtx = useContext(AppContext);
     let [isPageSwitching, setIsPageSwitching] = useState(false);
     let [switchColor, setSwitchColor] = useState("#EC483D");
-    let [pageNumber, setPageNumber] = useState(0);
     let [isDrawerVisible, setIsDrawerVisible] = useState(false);
     let [showUpButt, setShowUpButt] = useState(false);
     let [footerZ, setFooterZ] = useState(1);
@@ -56,7 +57,7 @@ const HomePage = (props: any): JSX.Element => {
     };
 
     const switchPage = (num: number) => {
-        if (pageNumber === num) {
+        if (appCtx.pageNumber === num) {
             return;
         }
 
@@ -64,7 +65,7 @@ const HomePage = (props: any): JSX.Element => {
         setIsPageSwitching(true);
         window.scrollTo(0, 0);
         setTimeout(() => {
-            setPageNumber(num);
+            appCtx.setPageNumber(num);
         }, 600);
         setTimeout(() => {
             setIsPageSwitching(false);
@@ -87,7 +88,7 @@ const HomePage = (props: any): JSX.Element => {
                 switchPage={switchPage}
             />
 
-            {pageNumber === 0 && (
+            {appCtx.pageNumber === 0 && (
                 <React.Fragment>
                     <Header m_ref={headerSectionRef} />
                     <Activities m_ref={activitiesSectionRef} />
@@ -96,8 +97,8 @@ const HomePage = (props: any): JSX.Element => {
                 </React.Fragment>
             )}
 
-            {pageNumber === 2 && <FacultyPage />}
-            {pageNumber === 5 && <AboutUsPage />}
+            {appCtx.pageNumber === 2 && <FacultyPage />}
+            {appCtx.pageNumber === 5 && <AboutUsPage />}
 
             <GoToTopButton show={showUpButt} onClick={scrollToTop} />
             <Footer zIndex={footerZ} />
