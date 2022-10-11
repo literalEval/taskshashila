@@ -14,6 +14,8 @@ import FacultyPage from "../components/home_page/FacultyPage";
 import AboutUsPage from "../components/home_page/AboutUsPage";
 import AppContext from "../context/app_context";
 import DrawerBack from "../components/drawer/DrawerBack";
+import AppModal from "../components/Modal";
+import EnrollNowPage from "../components/home_page/EnrollNowPage";
 
 const HomePage = (props: any): JSX.Element => {
     let appCtx = useContext(AppContext);
@@ -76,10 +78,11 @@ const HomePage = (props: any): JSX.Element => {
     return (
         <React.Fragment>
             {isPageSwitching && <PageSwitch backgroundColor={switchColor} />}
+
             <NavBar
                 isHeaderSticky={isHeaderSticky}
                 onClickMenu={() => setIsDrawerVisible(!isDrawerVisible)}
-                onEnrollNow={() => {}}
+                onEnrollNow={() => switchPage(6)}
             />
 
             {isDrawerVisible && (
@@ -107,6 +110,7 @@ const HomePage = (props: any): JSX.Element => {
 
             {appCtx.pageNumber === 2 && <FacultyPage />}
             {appCtx.pageNumber === 5 && <AboutUsPage />}
+            {appCtx.pageNumber === 6 && <EnrollNowPage />}
 
             <GoToTopButton show={showUpButt} onClick={scrollToTop} />
             <Footer zIndex={footerZ} />
