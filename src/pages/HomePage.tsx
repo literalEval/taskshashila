@@ -69,7 +69,7 @@ const HomePage = (props: any): JSX.Element => {
         setIsPageSwitching(true);
         setTimeout(() => {
             appCtx.setPageNumber(num);
-            window.scrollTo({ left: 0, top: 0 });
+            window.scrollTo(0, 0);
         }, 600);
         setTimeout(() => {
             setIsPageSwitching(false);
@@ -100,7 +100,9 @@ const HomePage = (props: any): JSX.Element => {
                     <Header
                         m_ref={headerSectionRef}
                         onClickActivities={() =>
-                            activitiesSectionRef.current?.scrollIntoView()
+                            activitiesSectionRef.current?.scrollIntoView({
+                                behavior: "smooth",
+                            })
                         }
                     />
                     <Activities m_ref={activitiesSectionRef} />
