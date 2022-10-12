@@ -67,9 +67,9 @@ const HomePage = (props: any): JSX.Element => {
 
         setSwitchColor(getColor());
         setIsPageSwitching(true);
-        window.scrollTo(0, 0);
         setTimeout(() => {
             appCtx.setPageNumber(num);
+            window.scrollTo({ left: 0, top: 0 });
         }, 600);
         setTimeout(() => {
             setIsPageSwitching(false);

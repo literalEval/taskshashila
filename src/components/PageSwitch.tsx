@@ -14,7 +14,7 @@ const PageSwitch = (props: any): JSX.Element => {
                 height: "100vh",
                 backgroundColor: props.backgroundColor,
 
-                position: "absolute",
+                position: "fixed",
                 left: "-100vw",
                 top: "0",
 
