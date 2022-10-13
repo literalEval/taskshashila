@@ -34,7 +34,7 @@ const HomePage = (props: any): JSX.Element => {
     let scrollPos = useScrollPosition();
 
     const scrollToTop = () => {
-        window.scrollTo(0, 0);
+        window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
     };
 
     const switchPage = (num: number) => {
@@ -80,7 +80,7 @@ const HomePage = (props: any): JSX.Element => {
     useEffect(() => {
         appAuth.onAuthStateChanged((user) => {
             if (user) {
-                console.log("home", appCtx.pageNumber);
+                // console.log("home", appCtx.pageNumber);
                 switchPage(2);
                 console.log(user);
             } else {
