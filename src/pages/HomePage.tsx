@@ -14,12 +14,13 @@ import FacultyPage from "../components/home_page/FacultyPage";
 import AboutUsPage from "../components/home_page/AboutUsPage";
 import AppContext from "../context/app_context";
 import DrawerBack from "../components/drawer/DrawerBack";
-import AppModal from "../components/Modal";
 import EnrollNowPage from "../components/home_page/EnrollNowPage";
 import LoginPage from "../components/home_page/LoginPage";
 
+import { appAuth } from "../firebase/firebase";
+
 const HomePage = (props: any): JSX.Element => {
-    let appCtx = useContext(AppContext);
+    const appCtx = useContext(AppContext);
     let [isPageSwitching, setIsPageSwitching] = useState(false);
     let [switchColor, setSwitchColor] = useState("#EC483D");
     let [isDrawerVisible, setIsDrawerVisible] = useState(false);
@@ -31,6 +32,26 @@ const HomePage = (props: any): JSX.Element => {
     let headerSectionRef =
         useRef<HTMLElement>() as React.RefObject<HTMLElement>;
     let scrollPos = useScrollPosition();
+
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    };
+
+    const switchPage = (num: number) => {
+        if (isPageSwitching || appCtx.pageNumber === num) {
+            return;
+        }
+
+        setSwitchColor(getColor());
+        setIsPageSwitching(true);
+        setTimeout(() => {
+            appCtx.setPageNumber(num);
+            window.scrollTo(0, 0);
+        }, 600);
+        setTimeout(() => {
+            setIsPageSwitching(false);
+        }, 1200);
+    };
 
     useEffect(() => {
         if ((!showUpButt && scrollPos > 10) || (showUpButt && scrollPos < 10)) {
@@ -56,25 +77,17 @@ const HomePage = (props: any): JSX.Element => {
         }
     }, [scrollPos]);
 
-    const scrollToTop = () => {
-        window.scrollTo(0, 0);
-    };
-
-    const switchPage = (num: number) => {
-        if (appCtx.pageNumber === num) {
-            return;
-        }
-
-        setSwitchColor(getColor());
-        setIsPageSwitching(true);
-        setTimeout(() => {
-            appCtx.setPageNumber(num);
-            window.scrollTo(0, 0);
-        }, 600);
-        setTimeout(() => {
-            setIsPageSwitching(false);
-        }, 1200);
-    };
+    useEffect(() => {
+        appAuth.onAuthStateChanged((user) => {
+            if (user) {
+                console.log("home", appCtx.pageNumber);
+                switchPage(2);
+                console.log(user);
+            } else {
+                console.log("No beeches");
+            }
+        });
+    }, []);
 
     return (
         <React.Fragment>

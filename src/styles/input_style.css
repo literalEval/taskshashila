@@ -14,6 +14,10 @@
     transition-duration: 300ms;
 }
 
+.app-input-line.invalidCreds {
+    box-shadow: 2px 2px 2px 2px #EC493D;
+}
+
 .app-input-line:focus {
     box-shadow: 3px 3px 3px 3px #E993A6;
 }
