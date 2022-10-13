@@ -53,6 +53,14 @@
     transition-property: background-color scale;
     transition-duration: 1s;
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-link--login {
+    width: 40%;
 }
 
 .app-link:hover {
