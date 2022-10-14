@@ -8,6 +8,22 @@ body {
     font-family: raisonne, sans-serif;
     margin: 0;
     background-color: #f1eee8;
+
+    /* Deprecated, but fast */
+    overflow: overlay;
+}
+
+body::-webkit-scrollbar {
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #4B92D6;
+    border-radius: 999999px;
 }
 
 code {
