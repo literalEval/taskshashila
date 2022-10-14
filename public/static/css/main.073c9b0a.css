@@ -1,5 +1,14 @@
 html {
     scroll-behavior: auto !important;
+    font-size: 62.5%;
+    height: -webkit-fill-available;
+}
+
+@media screen and (max-width: 1080px) {
+    html {
+        /* font-size: 31.25%; */
+        font-size: 46.875%;
+    }
 }
 
 body {
@@ -9,8 +18,11 @@ body {
     margin: 0;
     background-color: #f1eee8;
 
-    /* Deprecated, but fast */
+    /* Deprecated, but fast to implement*/
     overflow: overlay;
+
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
 }
 
 body::-webkit-scrollbar {
@@ -22,7 +34,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: #4B92D6;
+    background-color: #4b92d6;
     border-radius: 999999px;
 }
 

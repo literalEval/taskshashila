@@ -10,11 +10,11 @@ const HomePageBanner = (): JSX.Element => {
     const isPhone = useMediaQuery("(max-width: 1080px)");
 
     useEffect(() => {
-        if (!shouldShow && window.scrollY == 0) {
+        if (!shouldShow && window.scrollY === 0) {
             setShouldShow(true);
         }
 
-        if (shouldShow && window.scrollY != 0) {
+        if (shouldShow && window.scrollY !== 0) {
             setShouldShow(false);
         }
     }, [scrollPos]);
@@ -26,19 +26,20 @@ const HomePageBanner = (): JSX.Element => {
             }`}
             style={{
                 width: "100%",
-                height: isPhone ? "10vh" : "6vh",
+                height: isPhone ? "12vh" : "6vh",
 
-                fontSize: "22px",
+                fontSize: "2.4rem",
                 backgroundColor: "black",
                 color: "white",
 
                 position: "absolute",
-                top: isPhone ? "90vh" : "94vh",
+                top: isPhone ? `${window.innerHeight * 0.87}px` : "94vh",
                 zIndex: "4",
 
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
+                alignItems: "center",
             }}
         >
             We are still enrolling for the Fall 2022 semester of After School

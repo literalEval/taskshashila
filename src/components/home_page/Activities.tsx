@@ -11,8 +11,8 @@ const Activity = (props: any): JSX.Element => {
     return (
         <div
             style={{
-                width: isPhone ? "50%" : "25%",
-                height: "120px",
+                width: isPhone ? "70%" : "25%",
+                height: "12rem",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
@@ -35,7 +35,7 @@ const Activity = (props: any): JSX.Element => {
 
             <h1
                 style={{
-                    fontSize: "64px",
+                    fontSize: "6.4rem",
                     textAlign: "center",
                     maxWidth: isPhone ? "100%" : "80%",
                     padding: "5% 0%",
@@ -68,8 +68,8 @@ const Activities = (props: any): JSX.Element => {
                 zIndex: 2,
             }}
         >
-            <h1 style={{ fontSize: "96px" }}>Activities</h1>
-            <h2 style={{ width: isPhone ? "80%" : "40%" }}>
+            <h1 style={{ fontSize: "9.6rem" }}>Activities</h1>
+            <h2 style={{ width: isPhone ? "80%" : "40%", fontSize: "2.8rem" }}>
                 We offer classes for all ages throughout the year. If you don't
                 see the perfect class, we'll start one!
             </h2>
@@ -84,6 +84,7 @@ const Activities = (props: any): JSX.Element => {
                     padding: "12% 0% 1% 0%",
                 }}
             >
+                {isPhone && <div style={{ height: "4vh" }} />}
                 <Activity heading="Summer Camp" src={yellowBack}></Activity>
                 {isPhone && <div style={{ height: "16vh" }} />}
                 <Activity heading="Bal Sabha" src={pinkBack}></Activity>

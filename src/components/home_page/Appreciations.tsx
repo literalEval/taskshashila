@@ -13,16 +13,17 @@ const Quote = (props: any): JSX.Element => {
     return (
         <div
             style={{
-                width: isPhone ? "70%" : "40%",
+                width: isPhone ? "90%" : "40%",
                 height: "100%",
-                padding: "3% 5% 3% 0",
+                padding: "3% 5% 3% 5%",
+                translate: isPhone ? "0 -5%" : "0 0",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
                 alignItems: "end",
 
                 color: "white",
-                fontSize: "22px",
+                fontSize: "1.8rem",
             }}
         >
             <blockquote style={{ fontSize: "larger" }}>
@@ -54,7 +55,7 @@ const Highlight = (props: any) => {
         <div
             style={{
                 backgroundColor: props.color,
-                height: isPhone ? "80vh" : "50vh",
+                height: isPhone ? "auto" : "50vh",
                 width: "100%",
                 margin: "auto",
 
@@ -64,13 +65,15 @@ const Highlight = (props: any) => {
                 justifyContent: "space-around",
 
                 borderRadius: "12px",
+                padding: isPhone ? "2rem 0" : "auto",
             }}
         >
             <img
                 alt="Expert"
                 src={props.authImg}
                 style={{
-                    width: "35%",
+                    width: isPhone ? "70%" : "35%",
+                    transform: isPhone ? "translate(0%, -10%)" : "",
                     height: "auto",
                     overflow: "visible",
                     borderRadius: "12px",
@@ -91,15 +94,22 @@ const Appreciations = (): JSX.Element => {
         <section
             style={{
                 height: isPhone ? "auto" : "100vh",
-                padding: "4% 20%",
+                padding: `4% ${isPhone ? "10%" : "20%"} ${
+                    isPhone ? "20%" : "4%"
+                } ${isPhone ? "10%" : "20%"}`,
 
                 backgroundColor: "#f1eee8",
                 zIndex: 2,
             }}
         >
-            <h1 style={{ fontSize: "96px" }}>Expert's Views</h1>
+            <h1 style={{ fontSize: "9.6rem" }}>Expert's Views</h1>
             <div style={{ height: "14vh" }}></div>
-            <Carousel style={{ width: "120%", translate: "-10% 0" }}>
+            <Carousel
+                style={{
+                    width: isPhone ? "110%" : "120%",
+                    translate: isPhone ? "-5% 0" : "-10% 0",
+                }}
+            >
                 <Carousel.Item>
                     <Highlight
                         className=""

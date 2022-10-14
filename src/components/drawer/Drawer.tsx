@@ -10,7 +10,7 @@ const DrawerItem = (props: any): JSX.Element => {
             } ${props.pageNum === 6 ? "drawer__link-login" : ""}`}
             style={{
                 width: "90%",
-                fontSize: props.size === "small" ? "28px" : "36px",
+                fontSize: props.size === "small" ? "3.2rem" : "4.2rem",
 
                 display: "flex",
                 flexDirection: "row",
@@ -25,7 +25,7 @@ const DrawerItem = (props: any): JSX.Element => {
             <i
                 className={`fa-solid ${props.iconName}`}
                 style={{
-                    fontSize: props.size === "small" ? "18px" : "24px",
+                    fontSize: props.size === "small" ? "1.8rem" : "2.4rem",
                     width: "10%",
                 }}
             ></i>
@@ -43,16 +43,16 @@ const Drawer = (props: any): JSX.Element => {
     return (
         <div
             style={{
-                width: isPhone ? "50vw" : "20vw",
+                width: isPhone ? "26rem" : "28rem",
                 height: "100vh",
                 padding: "2% 2%",
 
                 color: "white",
-                fontSize: "20px",
+                fontSize: isPhone ? "2.4rem" : "1.8rem",
                 backgroundColor: "black",
 
                 position: "fixed",
-                left: props.visible ? 0 : isPhone ? "-50vw" : "-20vw",
+                left: props.visible ? 0 : isPhone ? "-26rem" : "-32rem",
                 top: 0,
                 zIndex: 5,
 
@@ -72,7 +72,7 @@ const Drawer = (props: any): JSX.Element => {
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "start",
-                    justifyContent: "space-evenly",
+                    justifyContent: "start",
                 }}
             >
                 <DrawerItem
@@ -82,7 +82,7 @@ const Drawer = (props: any): JSX.Element => {
                 >
                     MENU
                 </DrawerItem>
-                <div style={{ height: "10%", width: "4%" }}>&nbsp;</div>
+                <div style={{ height: "2%", width: "2%" }}>&nbsp;</div>
                 <DrawerItem
                     iconName="fa-house"
                     size="small"
@@ -117,7 +117,7 @@ const Drawer = (props: any): JSX.Element => {
                     onClose={props.onClose}
                     onClick={props.switchPage}
                 >
-                    Achievements
+                    Honours
                 </DrawerItem>
                 <DrawerItem
                     iconName="fa-sharp fa-ranking-star"
@@ -155,7 +155,7 @@ const Drawer = (props: any): JSX.Element => {
                     flexDirection: "column",
                     alignItems: "start",
 
-                    fontSize: "80%",
+                    fontSize: "76%",
                 }}
             >
                 <p>
@@ -182,6 +182,14 @@ const Drawer = (props: any): JSX.Element => {
                         Hata, Kushinagar<br></br> Uttar Pradesh, 274203
                     </a>
                 </p>
+                {isPhone && (
+                    <div
+                        style={{
+                            height: `${window.innerHeight * 0.13}px`,
+                            width: "5px",
+                        }}
+                    ></div>
+                )}
             </div>
         </div>
     );

@@ -53,7 +53,7 @@ const NavBar = (props: any): JSX.Element => {
             <h1
                 className="school-name"
                 style={{
-                    fontSize: "72px",
+                    fontSize: "7.2rem",
                     fontFamily: "Beattingvile",
                 }}
             >
@@ -66,6 +66,16 @@ const NavBar = (props: any): JSX.Element => {
             >
                 ENROLL NOW
             </button>
+
+            {/* Helps in keeping the title in center :) */}
+            {isPhone && (
+                <button
+                    className="app-link medium-link"
+                    style={{ opacity: 0 }}
+                >
+                    {isPhone ? "☰" : "☰ MENU"}
+                </button>
+            )}
         </nav>
     );
 };

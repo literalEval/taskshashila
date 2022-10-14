@@ -6,7 +6,7 @@ const DrawerBack = (props: any): JSX.Element => {
                 height: "100vh",
                 
                 zIndex: 4,
-                position: "absolute",
+                position: "fixed",
                 left: 0,
                 top: 0,
             }}

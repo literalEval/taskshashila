@@ -2,17 +2,6 @@ import dep_logo from "../assets/images/dep_logo.svg";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 import "../styles/anchor_style.css";
 
-const footerStyle: React.CSSProperties = {
-    height: "35vh",
-    backgroundColor: "black",
-    color: "white",
-
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
-};
-
 const madeByStyle: React.CSSProperties = {
     backgroundColor: "black",
     color: "white",
@@ -25,9 +14,8 @@ const madeByStyle: React.CSSProperties = {
 const AddressBlock = (props: any): JSX.Element => {
     return (
         <div
-            className="address-block"
             style={{
-                display: props.isPhone ? "none" : "flex",
+                display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
@@ -63,13 +51,26 @@ const AddressBlock = (props: any): JSX.Element => {
     );
 };
 
+const ContactUS = (): JSX.Element => {
+    return (
+        <div>
+            <h2>Contact Us</h2>
+            <span>Pintoo Dubey: +91 9839525231</span>
+            <br></br>
+            <span>Sarita Vaishya: +91 7398290820</span>
+            <br></br>
+            <span>Preeti Tiwari: +91 9454264015</span>
+        </div>
+    );
+};
+
 const Footer = (props: any): JSX.Element => {
     const isPhone = useMediaQuery("(max-width: 1080px)");
 
     return (
         <footer
             style={{
-                fontSize: "22px",
+                fontSize: "1.6rem",
                 backgroundAttachment: "fixed",
                 position: "sticky",
                 zIndex: props.zIndex,
@@ -79,36 +80,42 @@ const Footer = (props: any): JSX.Element => {
                 bottom: "0",
             }}
         >
-            <div style={footerStyle}>
+            <div
+                style={{
+                    height: "35vh",
+                    backgroundColor: "black",
+                    color: "white",
+
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "space-around",
+                    alignItems: "center",
+                }}
+            >
                 <div
                     style={{
                         backgroundImage: `url(${dep_logo})`,
                         backgroundSize: "100% 100%",
-                        width: "25vh",
-                        height: "25vh",
+                        width: isPhone ? "40vw" : "25vh",
+                        height: isPhone ? "40vw" : "25vh",
                     }}
                 ></div>
                 <AddressBlock isPhone={isPhone} />
-                <div>
-                    <h2>Contact Us</h2>
-                    <span>Pintoo Dubey: +91 9839525231</span>
-                    <br></br>
-                    <span>Sarita Vaishya: +91 7398290820</span>
-                    <br></br>
-                    <span>Preeti Tiwari: +91 9454264015</span>
-                </div>
+                {!isPhone && <ContactUS />}
             </div>
 
             <div
                 style={{
                     backgroundColor: "black",
-                    display: "flex",
+                    color: "white",
+                    display: isPhone ? "flex" : "none",
                     alignItems: "center",
                     justifyContent: "center",
                 }}
             >
-                <AddressBlock isPhone={!isPhone} />
+                <ContactUS />
             </div>
+
             <div style={madeByStyle}>
                 Made with ❤ by &nbsp;
                 <a
