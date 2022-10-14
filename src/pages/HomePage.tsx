@@ -18,6 +18,7 @@ import EnrollNowPage from "../components/home_page/EnrollNowPage";
 import LoginPage from "../components/home_page/LoginPage";
 
 import { appAuth } from "../firebase/firebase";
+import GalleryPage from "../components/home_page/GalleryPage";
 
 const HomePage = (props: any): JSX.Element => {
     const appCtx = useContext(AppContext);
@@ -124,6 +125,7 @@ const HomePage = (props: any): JSX.Element => {
                 </React.Fragment>
             )}
 
+            {appCtx.pageNumber === 1 && <GalleryPage />}
             {appCtx.pageNumber === 2 && <FacultyPage />}
             {appCtx.pageNumber === 5 && <AboutUsPage />}
             {appCtx.pageNumber === 6 && <LoginPage />}
