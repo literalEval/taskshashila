@@ -161,6 +161,7 @@ const Drawer = (props: any): JSX.Element => {
                 <p>
                     E&nbsp;{" "}
                     <a
+                        rel="noreferrer"
                         className="address-link"
                         href="mailto://ppgopalpurhata@gmail.com"
                         target="_blank"
@@ -172,6 +173,7 @@ const Drawer = (props: any): JSX.Element => {
                 <p style={{ textAlign: "start" }}>
                     A&nbsp;{" "}
                     <a
+                        rel="noreferrer"
                         className="address-link"
                         href="https://goo.gl/maps/MCRHtueWwg5PidBs5"
                         target={"_blank"}

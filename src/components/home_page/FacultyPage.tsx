@@ -62,6 +62,7 @@ const Highlight = (props: any) => {
             }}
         >
             <img
+                alt="Faculty"
                 src={props.authImg}
                 style={{
                     width: "35%",

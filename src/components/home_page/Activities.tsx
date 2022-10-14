@@ -22,6 +22,7 @@ const Activity = (props: any): JSX.Element => {
             }}
         >
             <img
+                alt="activity"
                 className="activity-img"
                 src={props.src}
                 style={{

@@ -44,9 +44,12 @@ const NavBar = (props: any): JSX.Element => {
                 borderBottom: props.isHeaderSticky ? "2px solid black" : "none",
             }}
         >
-            <a className="app-link medium-link" onClick={props.onClickMenu}>
+            <button
+                className="app-link medium-link"
+                onClick={props.onClickMenu}
+            >
                 {isPhone ? "☰" : "☰ MENU"}
-            </a>
+            </button>
             <h1
                 className="school-name"
                 style={{
@@ -56,13 +59,13 @@ const NavBar = (props: any): JSX.Element => {
             >
                 {pageNames[appCtx.pageNumber]}
             </h1>
-            <a
+            <button
                 style={{ display: isPhone ? "none" : "block" }}
                 className="app-link medium-link"
                 onClick={props.onEnrollNow}
             >
                 ENROLL NOW
-            </a>
+            </button>
         </nav>
     );
 };

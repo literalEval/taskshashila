@@ -39,6 +39,7 @@ const AddressBlock = (props: any): JSX.Element => {
             <p>
                 Addr: &nbsp;
                 <a
+                    rel="noreferrer"
                     className="address-link"
                     href="https://goo.gl/maps/MCRHtueWwg5PidBs5"
                     target={"_blank"}
@@ -50,6 +51,7 @@ const AddressBlock = (props: any): JSX.Element => {
             <p>
                 Email:&nbsp;
                 <a
+                    rel="noreferrer"
                     className="address-link"
                     href="mailto://ppgopalpurhata@gmail.com"
                     target={"_blank"}
@@ -110,6 +112,7 @@ const Footer = (props: any): JSX.Element => {
             <div style={madeByStyle}>
                 Made with ❤ by &nbsp;
                 <a
+                    rel="noreferrer"
                     className="chad"
                     href="https://github.com/literalEval"
                     target={"_blank"}

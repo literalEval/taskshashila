@@ -28,6 +28,7 @@ const Header = (props: any): JSX.Element => {
     return (
         <header style={headerStyle} ref={props.m_ref}>
             <img
+                alt="Header Background"
                 src={isPhone ? background_img_smol : background_img}
                 style={{
                     position: "absolute",
@@ -42,12 +43,12 @@ const Header = (props: any): JSX.Element => {
                 }}
             ></img>
             <p style={shlokaStyle}>vidya dadati vinayam</p>
-            <a
+            <button
                 className="app-link app-link--filled medium-link"
                 onClick={props.onClickActivities}
             >
                 Activities
-            </a>
+            </button>
             <div style={{ height: "10%" }}></div>
         </header>
     );

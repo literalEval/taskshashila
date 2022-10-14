@@ -15,7 +15,11 @@ const AboutUsPage = (): JSX.Element => {
                 backgroundColor: "#F1EEE8",
             }}
         >
-            <img src={school_logo} style={{ width: "40%", height: "auto" }} />
+            <img
+                alt="school_image"
+                src={school_logo}
+                style={{ width: "40%", height: "auto" }}
+            />
             <p style={{ width: "40%", fontSize: "larger" }}>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 Laudantium vel enim similique laborum? Aliquid doloribus amet
