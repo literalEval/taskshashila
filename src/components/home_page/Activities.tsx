@@ -45,9 +45,9 @@ const Activity = (props: any): JSX.Element => {
             >
                 {props.heading}
             </h1>
-            <a className="app-link medium-link" style={{ zIndex: 1 }}>
+            <button className="app-link medium-link" style={{ zIndex: 1 }}>
                 Learn More
-            </a>
+            </button>
         </div>
     );
 };
