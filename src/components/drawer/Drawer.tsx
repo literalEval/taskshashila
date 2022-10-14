@@ -1,4 +1,5 @@
 import React from "react";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 import "../../styles/drawer.css";
 
 const DrawerItem = (props: any): JSX.Element => {
@@ -37,10 +38,12 @@ const DrawerItem = (props: any): JSX.Element => {
 };
 
 const Drawer = (props: any): JSX.Element => {
+    const isPhone = useMediaQuery("(max-width: 1080px)");
+
     return (
         <div
             style={{
-                width: "20vw",
+                width: isPhone ? "50vw" : "20vw",
                 height: "100vh",
                 padding: "2% 2%",
 
@@ -49,7 +52,7 @@ const Drawer = (props: any): JSX.Element => {
                 backgroundColor: "black",
 
                 position: "fixed",
-                left: props.visible ? 0 : "-20vw",
+                left: props.visible ? 0 : isPhone ? "-50vw" : "-20vw",
                 top: 0,
                 zIndex: 5,
 

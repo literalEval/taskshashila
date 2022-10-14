@@ -4,12 +4,14 @@ import "../../styles/activities.css";
 import greenBack from "../../assets/images/after-school-art.svg";
 import pinkBack from "../../assets/images/all-day-art.svg";
 import yellowBack from "../../assets/images/summer-camp.svg";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 const Activity = (props: any): JSX.Element => {
+    const isPhone = useMediaQuery("(max-width: 1080px)");
     return (
         <div
             style={{
-                width: "25%",
+                width: isPhone ? "50%" : "25%",
                 height: "120px",
                 display: "flex",
                 flexDirection: "column",
@@ -33,8 +35,10 @@ const Activity = (props: any): JSX.Element => {
             <h1
                 style={{
                     fontSize: "64px",
-                    maxWidth: "80%",
+                    textAlign: "center",
+                    maxWidth: isPhone ? "100%" : "80%",
                     padding: "5% 0%",
+                    // transform: isPhone ? "translate(-30%, 0%)" : "none",
                     zIndex: 1,
                 }}
             >
@@ -48,11 +52,12 @@ const Activity = (props: any): JSX.Element => {
 };
 
 const Activities = (props: any): JSX.Element => {
+    const isPhone = useMediaQuery("(max-width: 1080px)");
     return (
         <section
             ref={props.m_ref}
             style={{
-                height: "100vh",
+                height: isPhone ? "auto" : "100vh",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
@@ -63,7 +68,7 @@ const Activities = (props: any): JSX.Element => {
             }}
         >
             <h1 style={{ fontSize: "96px" }}>Activities</h1>
-            <h2 style={{ width: "40%" }}>
+            <h2 style={{ width: isPhone ? "80%" : "40%" }}>
                 We offer classes for all ages throughout the year. If you don't
                 see the perfect class, we'll start one!
             </h2>
@@ -71,7 +76,7 @@ const Activities = (props: any): JSX.Element => {
                 style={{
                     width: "100%",
                     display: "flex",
-                    flexDirection: "row",
+                    flexDirection: isPhone ? "column" : "row",
                     justifyContent: "space-around",
                     alignItems: "center",
 
@@ -79,8 +84,11 @@ const Activities = (props: any): JSX.Element => {
                 }}
             >
                 <Activity heading="Summer Camp" src={yellowBack}></Activity>
+                {isPhone && <div style={{ height: "16vh" }} />}
                 <Activity heading="Bal Sabha" src={pinkBack}></Activity>
+                {isPhone && <div style={{ height: "16vh" }} />}
                 <Activity heading="Plantation" src={greenBack}></Activity>
+                {isPhone && <div style={{ height: "14vh" }} />}
             </div>
         </section>
     );

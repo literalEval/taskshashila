@@ -5,12 +5,15 @@ import varsh from "../../assets/images/varsh.jpg";
 import upsc from "../../assets/images/img.jpg";
 import eskimo from "../../assets/images/eskimo.jpg";
 import "../../styles/misc.css";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 const Quote = (props: any): JSX.Element => {
+    const isPhone = useMediaQuery("(max-width: 1080px)");
+
     return (
         <div
             style={{
-                width: "40%",
+                width: isPhone ? "70%" : "40%",
                 height: "100%",
                 padding: "3% 5% 3% 0",
                 display: "flex",
@@ -45,16 +48,18 @@ const Quote = (props: any): JSX.Element => {
 };
 
 const Highlight = (props: any) => {
+    const isPhone = useMediaQuery("(max-width: 1080px)");
+
     return (
         <div
             style={{
                 backgroundColor: props.color,
-                height: "50vh",
+                height: isPhone ? "80vh" : "50vh",
                 width: "100%",
                 margin: "auto",
 
                 display: "flex",
-                flexDirection: "row",
+                flexDirection: isPhone ? "column" : "row",
                 alignItems: "center",
                 justifyContent: "space-around",
 
@@ -79,10 +84,12 @@ const Highlight = (props: any) => {
 };
 
 const Appreciations = (): JSX.Element => {
+    const isPhone = useMediaQuery("(max-width: 1080px)");
+
     return (
         <section
             style={{
-                height: "100vh",
+                height: isPhone ? "auto" : "100vh",
                 padding: "4% 20%",
 
                 backgroundColor: "#f1eee8",

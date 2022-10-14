@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 import useScrollPosition from "../../hooks/useScrollPosition";
 
 import "../../styles/misc.css";
@@ -6,6 +7,7 @@ import "../../styles/misc.css";
 const HomePageBanner = (): JSX.Element => {
     let [shouldShow, setShouldShow] = useState(true);
     let scrollPos = useScrollPosition();
+    const isPhone = useMediaQuery("(max-width: 1080px)");
 
     useEffect(() => {
         if (!shouldShow && window.scrollY == 0) {
@@ -24,14 +26,14 @@ const HomePageBanner = (): JSX.Element => {
             }`}
             style={{
                 width: "100%",
-                height: "6vh",
+                height: isPhone ? "10vh" : "6vh",
 
                 fontSize: "22px",
                 backgroundColor: "black",
                 color: "white",
 
                 position: "absolute",
-                top: "94vh",
+                top: isPhone ? "90vh" : "94vh",
                 zIndex: "4",
 
                 display: "flex",

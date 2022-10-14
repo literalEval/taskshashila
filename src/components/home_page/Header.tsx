@@ -1,4 +1,6 @@
 import background_img from "../../assets/images/tac-top-shapes.svg";
+import background_img_smol from "../../assets/images/tac-top-shapes-mobile.svg";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 import "../../styles/anchor_style.css";
 
 const headerStyle: React.CSSProperties = {
@@ -13,18 +15,6 @@ const headerStyle: React.CSSProperties = {
     zIndex: "3",
 };
 
-const headerImgStyle: React.CSSProperties = {
-    position: "absolute",
-    width: "100%",
-    objectFit: "cover",
-
-    left: "auto",
-    right: "auto",
-    top: -330,
-    bottom: 0,
-    zIndex: -1,
-};
-
 const shlokaStyle: React.CSSProperties = {
     fontFamily: "Samarkan",
     fontSize: "112px",
@@ -32,9 +22,25 @@ const shlokaStyle: React.CSSProperties = {
 };
 
 const Header = (props: any): JSX.Element => {
+    const isPhone = useMediaQuery("(max-width: 1080px)");
+    const isTab = useMediaQuery("(max-width: 1560px)");
+
     return (
         <header style={headerStyle} ref={props.m_ref}>
-            <img src={background_img} style={headerImgStyle}></img>
+            <img
+                src={isPhone ? background_img_smol : background_img}
+                style={{
+                    position: "absolute",
+                    width: "100%",
+                    objectFit: "cover",
+
+                    left: "auto",
+                    right: "auto",
+                    top: isPhone ? 0 : isTab ? 0 : -330,
+                    bottom: 0,
+                    zIndex: -1,
+                }}
+            ></img>
             <p style={shlokaStyle}>vidya dadati vinayam</p>
             <a
                 className="app-link app-link--filled medium-link"

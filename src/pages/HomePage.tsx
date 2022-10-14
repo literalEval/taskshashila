@@ -78,17 +78,17 @@ const HomePage = (props: any): JSX.Element => {
         }
     }, [scrollPos]);
 
-    useEffect(() => {
-        appAuth.onAuthStateChanged((user) => {
-            if (user) {
-                // console.log("home", appCtx.pageNumber);
-                switchPage(2);
-                console.log(user);
-            } else {
-                console.log("No beeches");
-            }
-        });
-    }, []);
+    // useEffect(() => {
+    //     appAuth.onAuthStateChanged((user) => {
+    //         if (user) {
+    //             // console.log("home", appCtx.pageNumber);
+    //             switchPage(2);
+    //             console.log(user);
+    //         } else {
+    //             console.log("No beeches");
+    //         }
+    //     });
+    // }, []);
 
     return (
         <React.Fragment>

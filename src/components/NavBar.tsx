@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 import AppContext from "../context/app_context";
 import "../styles/anchor_style.css";
 import "../styles/navbar.css";
@@ -15,6 +16,7 @@ const pageNames: Array<String> = [
 ];
 
 const NavBar = (props: any): JSX.Element => {
+    const isPhone = useMediaQuery("(max-width: 1080px)");
     let appCtx = useContext(AppContext);
 
     return (
@@ -43,7 +45,7 @@ const NavBar = (props: any): JSX.Element => {
             }}
         >
             <a className="app-link medium-link" onClick={props.onClickMenu}>
-                ☰ MENU
+                {isPhone ? "☰" : "☰ MENU"}
             </a>
             <h1
                 className="school-name"
@@ -54,7 +56,11 @@ const NavBar = (props: any): JSX.Element => {
             >
                 {pageNames[appCtx.pageNumber]}
             </h1>
-            <a className="app-link medium-link" onClick={props.onEnrollNow}>
+            <a
+                style={{ display: isPhone ? "none" : "block" }}
+                className="app-link medium-link"
+                onClick={props.onEnrollNow}
+            >
                 ENROLL NOW
             </a>
         </nav>
