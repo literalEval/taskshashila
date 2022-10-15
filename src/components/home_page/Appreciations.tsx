@@ -1,16 +1,14 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 
 import varsh from "../../assets/images/varsh.jpg";
 import upsc from "../../assets/images/img.jpg";
 import eskimo from "../../assets/images/eskimo.jpg";
 import "../../styles/misc.css";
-import { useMediaQuery } from "../../hooks/useMediaQuery";
+import AppContext from "../../context/app_context";
 
 const Quote = (props: any): JSX.Element => {
-    const isPhone = useMediaQuery(
-        "(max-width: 1080px) and (orientation: portrait)"
-    );
+    let isPhone = useContext(AppContext).screenType.phone;
 
     return (
         <div
@@ -51,9 +49,7 @@ const Quote = (props: any): JSX.Element => {
 };
 
 const Highlight = (props: any) => {
-    const isPhone = useMediaQuery(
-        "(max-width: 1080px) and (orientation: portrait)"
-    );
+    let isPhone = useContext(AppContext).screenType.phone;
 
     return (
         <div
@@ -92,7 +88,7 @@ const Highlight = (props: any) => {
 };
 
 const Appreciations = (): JSX.Element => {
-    const isPhone = useMediaQuery("(max-width: 1080px)");
+    let isPhone = useContext(AppContext).screenType.phone;
 
     return (
         <section

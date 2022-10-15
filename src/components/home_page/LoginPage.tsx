@@ -2,13 +2,17 @@ import { useContext, useRef, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import backgroundImg from "../../assets/images/parties-events.svg";
 import AppContext from "../../context/app_context";
+
 import "../../styles/input_style.css";
+
 import tryFirebaseLogin from "./login_page";
 
 const LoginPage = (): JSX.Element => {
     const emailRef = useRef<HTMLInputElement>(null);
     const passRef = useRef<HTMLInputElement>(null);
     const appCtx = useContext(AppContext);
+
+    let isPhone = useContext(AppContext).screenType.phone;
 
     let [isLoggingIn, setIsLogginIn] = useState(false);
     let [invalidCreds, setInvalidCreds] = useState(false);
@@ -50,7 +54,7 @@ const LoginPage = (): JSX.Element => {
                 backgroundImage: `url(${backgroundImg})`,
                 backgroundPositionX: "center",
                 backgroundPositionY: "center",
-                backgroundSize: "70% auto",
+                backgroundSize: `${isPhone ? 100 : 70}% auto`,
             }}
         >
             <div

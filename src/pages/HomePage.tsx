@@ -17,11 +17,13 @@ import DrawerBack from "../components/drawer/DrawerBack";
 import EnrollNowPage from "../components/home_page/EnrollNowPage";
 import LoginPage from "../components/home_page/LoginPage";
 
-import { appAuth } from "../firebase/firebase";
 import GalleryPage from "../components/home_page/GalleryPage";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 
 const HomePage = (props: any): JSX.Element => {
     const appCtx = useContext(AppContext);
+    let isPhone = useMediaQuery("(max-width: 1080px)");
+
     let [isPageSwitching, setIsPageSwitching] = useState(false);
     let [switchColor, setSwitchColor] = useState("#EC483D");
     let [isDrawerVisible, setIsDrawerVisible] = useState(false);
@@ -76,7 +78,15 @@ const HomePage = (props: any): JSX.Element => {
         ) {
             setFooterZ(footerZ * -1);
         }
-    }, [scrollPos]);
+    }, [scrollPos, showUpButt, footerZ, isHeaderSticky]);
+
+    useEffect(() => {
+        appCtx.setScreenType({
+            phone: isPhone,
+            tablet: !isPhone,
+            laptop: !isPhone,
+        });
+    }, [isPhone]);
 
     // useEffect(() => {
     //     appAuth.onAuthStateChanged((user) => {

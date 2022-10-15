@@ -1,5 +1,5 @@
-import React, { useRef } from "react";
-import { useMediaQuery } from "../../hooks/useMediaQuery";
+import { useContext, useRef } from "react";
+import AppContext from "../../context/app_context";
 import "../../styles/drawer.css";
 
 const DrawerItem = (props: any): JSX.Element => {
@@ -38,9 +38,7 @@ const DrawerItem = (props: any): JSX.Element => {
 };
 
 const Drawer = (props: any): JSX.Element => {
-    const isPhone = useMediaQuery(
-        "(max-width: 1080px) and (orientation: portrait)"
-    );
+    let isPhone = useContext(AppContext).screenType.phone;
 
     const infoBarRef = useRef<HTMLDivElement>(null);
 
@@ -196,17 +194,6 @@ const Drawer = (props: any): JSX.Element => {
                         Hata, Kushinagar<br></br> Uttar Pradesh, 274203
                     </a>
                 </p>
-                {/* {isPhone && (
-                    <div
-                        style={{
-                            height: `${
-                                window.innerHeight -
-                                (infoBarRef.current?.clientHeight ?? 20)
-                            }px`,
-                            width: "5px",
-                        }}
-                    ></div>
-                )} */}
             </div>
         </div>
     );

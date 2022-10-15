@@ -2,11 +2,11 @@ import background_img from "../../assets/images/tac-top-shapes.svg";
 import background_img_smol from "../../assets/images/tac-top-shapes-mobile.svg";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 import "../../styles/anchor_style.css";
+import { useContext } from "react";
+import AppContext from "../../context/app_context";
 
 const Header = (props: any): JSX.Element => {
-    const isPhone = useMediaQuery(
-        "(max-width: 1080px) and (orientation: portrait)"
-    );
+    let isPhone = useContext(AppContext).screenType.phone;
     const isTab = useMediaQuery("(max-width: 1360px)");
 
     return (

@@ -1,15 +1,13 @@
-import React from "react";
+import { useContext } from "react";
 import "../../styles/activities.css";
 
 import greenBack from "../../assets/images/after-school-art.svg";
 import pinkBack from "../../assets/images/all-day-art.svg";
 import yellowBack from "../../assets/images/summer-camp.svg";
-import { useMediaQuery } from "../../hooks/useMediaQuery";
+import AppContext from "../../context/app_context";
 
 const Activity = (props: any): JSX.Element => {
-    let isPhone = useMediaQuery(
-        "(max-width: 1080px) and (orientation: portrait)"
-    );
+    let isPhone = useContext(AppContext).screenType.phone;
 
     return (
         <div
@@ -42,7 +40,6 @@ const Activity = (props: any): JSX.Element => {
                     textAlign: "center",
                     maxWidth: isPhone ? "100%" : "80%",
                     padding: "5% 0%",
-                    // transform: isPhone ? "translate(-30%, 0%)" : "none",
                     zIndex: 1,
                 }}
             >
@@ -56,9 +53,7 @@ const Activity = (props: any): JSX.Element => {
 };
 
 const Activities = (props: any): JSX.Element => {
-    const isPhone = useMediaQuery(
-        "(max-width: 1080px) and (orientation: portrait)"
-    );
+    let isPhone = useContext(AppContext).screenType.phone;
     
     return (
         <section

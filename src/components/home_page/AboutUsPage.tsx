@@ -1,10 +1,9 @@
+import { useContext } from "react";
 import school_logo from "../../assets/images/IIT_BHU.jpg";
-import { useMediaQuery } from "../../hooks/useMediaQuery";
+import AppContext from "../../context/app_context";
 
 const AboutUsPage = (): JSX.Element => {
-    const isPhone = useMediaQuery(
-        "(max-width: 1080px) and (orientation: portrait)"
-    );
+    let isPhone = useContext(AppContext).screenType.phone;
 
     return (
         <section
