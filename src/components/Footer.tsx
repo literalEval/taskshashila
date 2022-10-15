@@ -96,17 +96,19 @@ const Footer = (props: any): JSX.Element => {
                 {!isPhone && <ContactUS />}
             </div>
 
-            <div
-                style={{
-                    backgroundColor: "black",
-                    color: "white",
-                    display: isPhone ? "flex" : "none",
-                    alignItems: "center",
-                    justifyContent: "center",
-                }}
-            >
-                <ContactUS />
-            </div>
+            {isPhone && (
+                <div
+                    style={{
+                        backgroundColor: "black",
+                        color: "white",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                    }}
+                >
+                    <ContactUS />
+                </div>
+            )}
 
             <div
                 style={{

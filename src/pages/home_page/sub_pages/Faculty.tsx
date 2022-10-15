@@ -79,7 +79,7 @@ const Highlight = (props: any) => {
     );
 };
 
-const FacultyPage = (): JSX.Element => {
+const Faculty = (): JSX.Element => {
     return (
         <section
             style={{
@@ -141,4 +141,4 @@ const FacultyPage = (): JSX.Element => {
     );
 };
 
-export default FacultyPage;
+export default Faculty;

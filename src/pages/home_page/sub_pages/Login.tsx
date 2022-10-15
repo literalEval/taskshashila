@@ -1,13 +1,13 @@
 import { useContext, useRef, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import backgroundImg from "../../assets/images/parties-events.svg";
-import AppContext from "../../context/app_context";
+import AppContext from "../../../context/app_context";
 
 import "../../styles/input_style.css";
 
-import tryFirebaseLogin from "./login_page";
+import tryFirebaseLogin from "../helpers/login_page";
 
-const LoginPage = (): JSX.Element => {
+const Login = (): JSX.Element => {
     const emailRef = useRef<HTMLInputElement>(null);
     const passRef = useRef<HTMLInputElement>(null);
     const appCtx = useContext(AppContext);
@@ -105,4 +105,4 @@ const LoginPage = (): JSX.Element => {
     );
 };
 
-export default LoginPage;
+export default Login;

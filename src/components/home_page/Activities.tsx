@@ -54,7 +54,7 @@ const Activity = (props: any): JSX.Element => {
 
 const Activities = (props: any): JSX.Element => {
     let isPhone = useContext(AppContext).screenType.phone;
-    
+
     return (
         <section
             ref={props.m_ref}

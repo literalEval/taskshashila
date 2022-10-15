@@ -1,6 +1,6 @@
 import "./App.css";
 import AppCtxProvider from "./context/AppCtxProvider";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/home_page/HomePage";
 
 function App() {
     return (

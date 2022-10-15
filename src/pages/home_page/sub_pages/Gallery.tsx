@@ -1,4 +1,4 @@
-const GalleryPage = (): JSX.Element => {
+const Gallery = (): JSX.Element => {
     return (
         <section
             style={{
@@ -12,4 +12,4 @@ const GalleryPage = (): JSX.Element => {
     );
 };
 
-export default GalleryPage;
+export default Gallery;

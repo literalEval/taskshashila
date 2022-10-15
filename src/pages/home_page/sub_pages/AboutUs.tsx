@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import school_logo from "../../assets/images/IIT_BHU.jpg";
-import AppContext from "../../context/app_context";
+import AppContext from "../../../context/app_context";
 
-const AboutUsPage = (): JSX.Element => {
+const AboutUs = (): JSX.Element => {
     let isPhone = useContext(AppContext).screenType.phone;
 
     return (
@@ -43,4 +43,4 @@ const AboutUsPage = (): JSX.Element => {
     );
 };
 
-export default AboutUsPage;
+export default AboutUs;
