@@ -1,9 +1,9 @@
 import { useContext, useRef, useState } from "react";
 import { Spinner } from "react-bootstrap";
-import backgroundImg from "../../assets/images/parties-events.svg";
+import backgroundImg from "../../../assets/images/parties-events.svg";
 import AppContext from "../../../context/app_context";
 
-import "../../styles/input_style.css";
+import "../../../styles/input_style.css";
 
 import tryFirebaseLogin from "../helpers/login_page";
 

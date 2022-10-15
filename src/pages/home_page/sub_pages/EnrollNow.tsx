@@ -1,4 +1,4 @@
-import "../../styles/anchor_style.css";
+import "../../../styles/anchor_style.css";
 
 const EnrollNow = (): JSX.Element => {
     return (

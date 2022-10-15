@@ -1,4 +1,4 @@
-import "../../styles/anchor_style.css";
+import "../styles/anchor_style.css";
 
 const GoToTopButton = (props: any): JSX.Element => {
     return (

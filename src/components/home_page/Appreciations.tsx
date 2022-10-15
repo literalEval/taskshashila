@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import Carousel from "react-bootstrap/Carousel";
 
+import AppContext from "../../context/app_context";
 import varsh from "../../assets/images/varsh.jpg";
 import upsc from "../../assets/images/img.jpg";
 import eskimo from "../../assets/images/eskimo.jpg";
 import "../../styles/misc.css";
-import AppContext from "../../context/app_context";
 
 const Quote = (props: any): JSX.Element => {
     let isPhone = useContext(AppContext).screenType.phone;
