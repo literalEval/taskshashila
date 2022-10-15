@@ -4,7 +4,9 @@ import { useMediaQuery } from "../../hooks/useMediaQuery";
 import "../../styles/anchor_style.css";
 
 const Header = (props: any): JSX.Element => {
-    const isPhone = useMediaQuery("(max-width: 1080px)");
+    const isPhone = useMediaQuery(
+        "(max-width: 1080px) and (orientation: portrait)"
+    );
     const isTab = useMediaQuery("(max-width: 1360px)");
 
     return (

@@ -16,7 +16,9 @@ const pageNames: Array<String> = [
 ];
 
 const NavBar = (props: any): JSX.Element => {
-    const isPhone = useMediaQuery("(max-width: 1080px)");
+    const isPhone = useMediaQuery(
+        "(max-width: 1080px) and (orientation: portrait)"
+    );
     let appCtx = useContext(AppContext);
 
     return (
@@ -69,10 +71,7 @@ const NavBar = (props: any): JSX.Element => {
 
             {/* Helps in keeping the title in center :) */}
             {isPhone && (
-                <button
-                    className="app-link medium-link"
-                    style={{ opacity: 0 }}
-                >
+                <button className="app-link medium-link" style={{ opacity: 0 }}>
                     {isPhone ? "☰" : "☰ MENU"}
                 </button>
             )}

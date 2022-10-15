@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 import "../../styles/drawer.css";
 
@@ -38,12 +38,16 @@ const DrawerItem = (props: any): JSX.Element => {
 };
 
 const Drawer = (props: any): JSX.Element => {
-    const isPhone = useMediaQuery("(max-width: 1080px)");
+    const isPhone = useMediaQuery(
+        "(max-width: 1080px) and (orientation: portrait)"
+    );
+
+    const infoBarRef = useRef<HTMLDivElement>(null);
 
     return (
         <div
             style={{
-                width: isPhone ? "26rem" : "28rem",
+                width: isPhone ? "30rem" : "28rem",
                 height: "100vh",
                 padding: "2% 2%",
 
@@ -52,7 +56,7 @@ const Drawer = (props: any): JSX.Element => {
                 backgroundColor: "black",
 
                 position: "fixed",
-                left: props.visible ? 0 : isPhone ? "-26rem" : "-32rem",
+                left: props.visible ? 0 : isPhone ? "-30rem" : "-32rem",
                 top: 0,
                 zIndex: 5,
 
@@ -149,6 +153,7 @@ const Drawer = (props: any): JSX.Element => {
             </div>
 
             <div
+                ref={infoBarRef}
                 className="drawer__school-info-bar"
                 style={{
                     display: "flex",
@@ -156,6 +161,11 @@ const Drawer = (props: any): JSX.Element => {
                     alignItems: "start",
 
                     fontSize: "76%",
+                    position: "absolute",
+                    top: `${
+                        window.innerHeight -
+                        (infoBarRef.current?.clientHeight ?? 20)
+                    }px`,
                 }}
             >
                 <p>
@@ -170,7 +180,11 @@ const Drawer = (props: any): JSX.Element => {
                     </a>
                 </p>
                 <p>T&nbsp; +91 8400042939</p>
-                <p style={{ textAlign: "start" }}>
+                <p
+                    style={{
+                        textAlign: "start",
+                    }}
+                >
                     A&nbsp;{" "}
                     <a
                         rel="noreferrer"
@@ -182,14 +196,17 @@ const Drawer = (props: any): JSX.Element => {
                         Hata, Kushinagar<br></br> Uttar Pradesh, 274203
                     </a>
                 </p>
-                {isPhone && (
+                {/* {isPhone && (
                     <div
                         style={{
-                            height: `${window.innerHeight * 0.13}px`,
+                            height: `${
+                                window.innerHeight -
+                                (infoBarRef.current?.clientHeight ?? 20)
+                            }px`,
                             width: "5px",
                         }}
                     ></div>
-                )}
+                )} */}
             </div>
         </div>
     );

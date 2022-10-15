@@ -65,7 +65,9 @@ const ContactUS = (): JSX.Element => {
 };
 
 const Footer = (props: any): JSX.Element => {
-    const isPhone = useMediaQuery("(max-width: 1080px)");
+    const isPhone = useMediaQuery(
+        "(max-width: 1080px) and (orientation: portrait)"
+    );
 
     return (
         <footer

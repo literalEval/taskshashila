@@ -8,7 +8,9 @@ import "../../styles/misc.css";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 const Quote = (props: any): JSX.Element => {
-    const isPhone = useMediaQuery("(max-width: 1080px)");
+    const isPhone = useMediaQuery(
+        "(max-width: 1080px) and (orientation: portrait)"
+    );
 
     return (
         <div
@@ -49,7 +51,9 @@ const Quote = (props: any): JSX.Element => {
 };
 
 const Highlight = (props: any) => {
-    const isPhone = useMediaQuery("(max-width: 1080px)");
+    const isPhone = useMediaQuery(
+        "(max-width: 1080px) and (orientation: portrait)"
+    );
 
     return (
         <div

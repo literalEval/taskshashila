@@ -7,7 +7,10 @@ import yellowBack from "../../assets/images/summer-camp.svg";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 const Activity = (props: any): JSX.Element => {
-    const isPhone = useMediaQuery("(max-width: 1080px)");
+    let isPhone = useMediaQuery(
+        "(max-width: 1080px) and (orientation: portrait)"
+    );
+
     return (
         <div
             style={{
@@ -53,7 +56,10 @@ const Activity = (props: any): JSX.Element => {
 };
 
 const Activities = (props: any): JSX.Element => {
-    const isPhone = useMediaQuery("(max-width: 1080px)");
+    const isPhone = useMediaQuery(
+        "(max-width: 1080px) and (orientation: portrait)"
+    );
+    
     return (
         <section
             ref={props.m_ref}

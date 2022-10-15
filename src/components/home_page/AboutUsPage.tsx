@@ -2,7 +2,9 @@ import school_logo from "../../assets/images/IIT_BHU.jpg";
 import { useMediaQuery } from "../../hooks/useMediaQuery";
 
 const AboutUsPage = (): JSX.Element => {
-    const isPhone = useMediaQuery("(max-width: 1080px)");
+    const isPhone = useMediaQuery(
+        "(max-width: 1080px) and (orientation: portrait)"
+    );
 
     return (
         <section
