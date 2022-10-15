@@ -7,7 +7,7 @@ import AppContext from "../../context/app_context";
 
 const Header = (props: any): JSX.Element => {
     let isPhone = useContext(AppContext).screenType.phone;
-    const isTab = useMediaQuery("(max-width: 1360px)");
+    // const isTab = useMediaQuery("(max-width: 1360px)");
 
     return (
         <header
@@ -36,7 +36,7 @@ const Header = (props: any): JSX.Element => {
 
                     left: "auto",
                     right: "auto",
-                    top: isPhone ? 0 : isTab ? 0 : "-20rem",
+                    top: isPhone ? 0 : "-20rem",
                     bottom: 0,
                     zIndex: -1,
                 }}

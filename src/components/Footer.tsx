@@ -1,15 +1,7 @@
+import { useContext } from "react";
 import dep_logo from "../assets/images/dep_logo.svg";
-import { useMediaQuery } from "../hooks/useMediaQuery";
+import AppContext from "../context/app_context";
 import "../styles/anchor_style.css";
-
-const madeByStyle: React.CSSProperties = {
-    backgroundColor: "black",
-    color: "white",
-    height: "6vh",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-};
 
 const AddressBlock = (props: any): JSX.Element => {
     return (
@@ -65,9 +57,7 @@ const ContactUS = (): JSX.Element => {
 };
 
 const Footer = (props: any): JSX.Element => {
-    const isPhone = useMediaQuery(
-        "(max-width: 1080px) and (orientation: portrait)"
-    );
+    let isPhone = useContext(AppContext).screenType.phone;
 
     return (
         <footer
@@ -118,7 +108,16 @@ const Footer = (props: any): JSX.Element => {
                 <ContactUS />
             </div>
 
-            <div style={madeByStyle}>
+            <div
+                style={{
+                    backgroundColor: "black",
+                    color: "white",
+                    height: "6vh",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                }}
+            >
                 Made with ❤ by &nbsp;
                 <a
                     rel="noreferrer"
