@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { useMediaQuery } from "../hooks/useMediaQuery";
 import AppContext from "../context/app_context";
 import "../styles/anchor_style.css";
 import "../styles/navbar.css";
@@ -16,10 +15,8 @@ const pageNames: Array<String> = [
 ];
 
 const NavBar = (props: any): JSX.Element => {
-    const isPhone = useMediaQuery(
-        "(max-width: 1080px) and (orientation: portrait)"
-    );
     let appCtx = useContext(AppContext);
+    let isPhone = appCtx.screenType.phone;
 
     return (
         <nav
