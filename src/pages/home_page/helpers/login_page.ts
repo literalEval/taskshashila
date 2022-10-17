@@ -1,6 +1,6 @@
 // import { createUserWithEmailAndPassword } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { appAuth } from "../../firebase/firebase";
+import { appAuth } from "../../../firebase/firebase";
 
 const tryFirebaseLogin = async (
     email: string | undefined,

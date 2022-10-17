@@ -1,6 +1,6 @@
-import "../../styles/anchor_style.css";
+import "../../../styles/anchor_style.css";
 
-const EnrollNowPage = (): JSX.Element => {
+const EnrollNow = (): JSX.Element => {
     return (
         <section
             style={{
@@ -26,4 +26,4 @@ const EnrollNowPage = (): JSX.Element => {
     );
 };
 
-export default EnrollNowPage;
+export default EnrollNow;

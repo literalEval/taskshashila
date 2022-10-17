@@ -1,10 +1,10 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 
-import varsh from "../../assets/images/varsh.jpg";
-import upsc from "../../assets/images/img.jpg";
-import eskimo from "../../assets/images/eskimo.jpg";
-import "../../styles/misc.css";
+import varsh from "../../../assets/images/varsh.jpg";
+import upsc from "../../../assets/images/img.jpg";
+import eskimo from "../../../assets/images/eskimo.jpg";
+import "../../../styles/misc.css";
 
 const Quote = (props: any): JSX.Element => {
     return (
@@ -62,6 +62,7 @@ const Highlight = (props: any) => {
             }}
         >
             <img
+                alt="Faculty"
                 src={props.authImg}
                 style={{
                     width: "35%",
@@ -78,7 +79,7 @@ const Highlight = (props: any) => {
     );
 };
 
-const FacultyPage = (): JSX.Element => {
+const Faculty = (): JSX.Element => {
     return (
         <section
             style={{
@@ -140,4 +141,4 @@ const FacultyPage = (): JSX.Element => {
     );
 };
 
-export default FacultyPage;
+export default Faculty;

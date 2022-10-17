@@ -1,27 +1,29 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import useScrollPosition from "../hooks/useScrollPosition";
+import useScrollPosition from "../../hooks/useScrollPosition";
+import AppContext from "../../context/app_context";
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 
-import Header from "../components/home_page/Header";
-import HomePageBanner from "../components/home_page/HomePageBanner";
-import Drawer from "../components/drawer/Drawer";
-import Activities from "../components/home_page/Activities";
-import Appreciations from "../components/home_page/Appreciations";
-import Footer from "../components/Footer";
-import GoToTopButton from "../components/home_page/GoToTopButton";
-import NavBar from "../components/NavBar";
-import PageSwitch, { getColor } from "../components/PageSwitch";
-import FacultyPage from "../components/home_page/FacultyPage";
-import AboutUsPage from "../components/home_page/AboutUsPage";
-import AppContext from "../context/app_context";
-import DrawerBack from "../components/drawer/DrawerBack";
-import EnrollNowPage from "../components/home_page/EnrollNowPage";
-import LoginPage from "../components/home_page/LoginPage";
+import Header from "../../components/home_page/Header";
+import HomePageBanner from "../../components/home_page/HomePageBanner";
+import Drawer from "../../components/drawer/Drawer";
+import Activities from "../../components/home_page/Activities";
+import Appreciations from "../../components/home_page/Appreciations";
+import Footer from "../../components/Footer";
+import GoToTopButton from "../../components/GoToTopButton";
+import NavBar from "../../components/NavBar";
+import PageSwitch, { getColor } from "../../components/PageSwitch";
+import Faculty from "./sub_pages/Faculty";
+import AboutUs from "./sub_pages/AboutUs";
+import DrawerBack from "../../components/drawer/DrawerBack";
+import EnrollNow from "./sub_pages/EnrollNow";
+import Login from "./sub_pages/Login";
+import Gallery from "./sub_pages/Gallery";
 
-import { appAuth } from "../firebase/firebase";
-import GalleryPage from "../components/home_page/GalleryPage";
 
 const HomePage = (props: any): JSX.Element => {
     const appCtx = useContext(AppContext);
+    let isPhone = useMediaQuery("(max-width: 1080px)");
+
     let [isPageSwitching, setIsPageSwitching] = useState(false);
     let [switchColor, setSwitchColor] = useState("#EC483D");
     let [isDrawerVisible, setIsDrawerVisible] = useState(false);
@@ -76,19 +78,27 @@ const HomePage = (props: any): JSX.Element => {
         ) {
             setFooterZ(footerZ * -1);
         }
-    }, [scrollPos]);
+    }, [scrollPos, showUpButt, footerZ, isHeaderSticky]);
 
     useEffect(() => {
-        appAuth.onAuthStateChanged((user) => {
-            if (user) {
-                // console.log("home", appCtx.pageNumber);
-                switchPage(2);
-                console.log(user);
-            } else {
-                console.log("No beeches");
-            }
+        appCtx.setScreenType({
+            phone: isPhone,
+            tablet: !isPhone,
+            laptop: !isPhone,
         });
-    }, []);
+    }, [isPhone]);
+
+    // useEffect(() => {
+    //     appAuth.onAuthStateChanged((user) => {
+    //         if (user) {
+    //             // console.log("home", appCtx.pageNumber);
+    //             switchPage(2);
+    //             console.log(user);
+    //         } else {
+    //             console.log("No beeches");
+    //         }
+    //     });
+    // }, []);
 
     return (
         <React.Fragment>
@@ -125,11 +135,11 @@ const HomePage = (props: any): JSX.Element => {
                 </React.Fragment>
             )}
 
-            {appCtx.pageNumber === 1 && <GalleryPage />}
-            {appCtx.pageNumber === 2 && <FacultyPage />}
-            {appCtx.pageNumber === 5 && <AboutUsPage />}
-            {appCtx.pageNumber === 6 && <LoginPage />}
-            {appCtx.pageNumber === 7 && <EnrollNowPage />}
+            {appCtx.pageNumber === 1 && <Gallery />}
+            {appCtx.pageNumber === 2 && <Faculty />}
+            {appCtx.pageNumber === 5 && <AboutUs />}
+            {appCtx.pageNumber === 6 && <Login />}
+            {appCtx.pageNumber === 7 && <EnrollNow />}
 
             <GoToTopButton show={showUpButt} onClick={scrollToTop} />
             <Footer zIndex={footerZ} />

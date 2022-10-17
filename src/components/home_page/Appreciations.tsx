@@ -1,25 +1,29 @@
-import React from "react";
+import { useContext } from "react";
 import Carousel from "react-bootstrap/Carousel";
 
+import AppContext from "../../context/app_context";
 import varsh from "../../assets/images/varsh.jpg";
 import upsc from "../../assets/images/img.jpg";
 import eskimo from "../../assets/images/eskimo.jpg";
 import "../../styles/misc.css";
 
 const Quote = (props: any): JSX.Element => {
+    let isPhone = useContext(AppContext).screenType.phone;
+
     return (
         <div
             style={{
-                width: "40%",
+                width: isPhone ? "90%" : "40%",
                 height: "100%",
-                padding: "3% 5% 3% 0",
+                padding: "3% 5% 3% 5%",
+                translate: isPhone ? "0 -5%" : "0 0",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
                 alignItems: "end",
 
                 color: "white",
-                fontSize: "22px",
+                fontSize: "1.8rem",
             }}
         >
             <blockquote style={{ fontSize: "larger" }}>
@@ -45,26 +49,31 @@ const Quote = (props: any): JSX.Element => {
 };
 
 const Highlight = (props: any) => {
+    let isPhone = useContext(AppContext).screenType.phone;
+
     return (
         <div
             style={{
                 backgroundColor: props.color,
-                height: "50vh",
+                height: isPhone ? "auto" : "50vh",
                 width: "100%",
                 margin: "auto",
 
                 display: "flex",
-                flexDirection: "row",
+                flexDirection: isPhone ? "column" : "row",
                 alignItems: "center",
                 justifyContent: "space-around",
 
                 borderRadius: "12px",
+                padding: isPhone ? "2rem 0" : "auto",
             }}
         >
             <img
+                alt="Expert"
                 src={props.authImg}
                 style={{
-                    width: "35%",
+                    width: isPhone ? "70%" : "35%",
+                    transform: isPhone ? "translate(0%, -10%)" : "",
                     height: "auto",
                     overflow: "visible",
                     borderRadius: "12px",
@@ -79,19 +88,28 @@ const Highlight = (props: any) => {
 };
 
 const Appreciations = (): JSX.Element => {
+    let isPhone = useContext(AppContext).screenType.phone;
+
     return (
         <section
             style={{
-                height: "100vh",
-                padding: "4% 20%",
+                height: isPhone ? "auto" : "100vh",
+                padding: `4% ${isPhone ? "10%" : "20%"} ${
+                    isPhone ? "20%" : "4%"
+                } ${isPhone ? "10%" : "20%"}`,
 
                 backgroundColor: "#f1eee8",
                 zIndex: 2,
             }}
         >
-            <h1 style={{ fontSize: "96px" }}>Expert's Views</h1>
+            <h1 style={{ fontSize: "9.6rem" }}>Expert's Views</h1>
             <div style={{ height: "14vh" }}></div>
-            <Carousel style={{ width: "120%", translate: "-10% 0" }}>
+            <Carousel
+                style={{
+                    width: isPhone ? "110%" : "120%",
+                    translate: isPhone ? "-5% 0" : "-10% 0",
+                }}
+            >
                 <Carousel.Item>
                     <Highlight
                         className=""

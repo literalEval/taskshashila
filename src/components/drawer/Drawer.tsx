@@ -1,4 +1,5 @@
-import React from "react";
+import { useContext, useRef } from "react";
+import AppContext from "../../context/app_context";
 import "../../styles/drawer.css";
 
 const DrawerItem = (props: any): JSX.Element => {
@@ -9,7 +10,7 @@ const DrawerItem = (props: any): JSX.Element => {
             } ${props.pageNum === 6 ? "drawer__link-login" : ""}`}
             style={{
                 width: "90%",
-                fontSize: props.size === "small" ? "28px" : "36px",
+                fontSize: props.size === "small" ? "3.2rem" : "4.2rem",
 
                 display: "flex",
                 flexDirection: "row",
@@ -24,7 +25,7 @@ const DrawerItem = (props: any): JSX.Element => {
             <i
                 className={`fa-solid ${props.iconName}`}
                 style={{
-                    fontSize: props.size === "small" ? "18px" : "24px",
+                    fontSize: props.size === "small" ? "1.8rem" : "2.4rem",
                     width: "10%",
                 }}
             ></i>
@@ -37,19 +38,23 @@ const DrawerItem = (props: any): JSX.Element => {
 };
 
 const Drawer = (props: any): JSX.Element => {
+    let isPhone = useContext(AppContext).screenType.phone;
+
+    const infoBarRef = useRef<HTMLDivElement>(null);
+
     return (
         <div
             style={{
-                width: "20vw",
+                width: isPhone ? "30rem" : "28rem",
                 height: "100vh",
                 padding: "2% 2%",
 
                 color: "white",
-                fontSize: "20px",
+                fontSize: isPhone ? "2.4rem" : "1.8rem",
                 backgroundColor: "black",
 
                 position: "fixed",
-                left: props.visible ? 0 : "-20vw",
+                left: props.visible ? 0 : isPhone ? "-30rem" : "-32rem",
                 top: 0,
                 zIndex: 5,
 
@@ -69,7 +74,7 @@ const Drawer = (props: any): JSX.Element => {
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "start",
-                    justifyContent: "space-evenly",
+                    justifyContent: "start",
                 }}
             >
                 <DrawerItem
@@ -79,7 +84,7 @@ const Drawer = (props: any): JSX.Element => {
                 >
                     MENU
                 </DrawerItem>
-                <div style={{ height: "10%", width: "4%" }}>&nbsp;</div>
+                <div style={{ height: "2%", width: "2%" }}>&nbsp;</div>
                 <DrawerItem
                     iconName="fa-house"
                     size="small"
@@ -114,7 +119,7 @@ const Drawer = (props: any): JSX.Element => {
                     onClose={props.onClose}
                     onClick={props.switchPage}
                 >
-                    Achievements
+                    Honours
                 </DrawerItem>
                 <DrawerItem
                     iconName="fa-sharp fa-ranking-star"
@@ -146,18 +151,25 @@ const Drawer = (props: any): JSX.Element => {
             </div>
 
             <div
+                ref={infoBarRef}
                 className="drawer__school-info-bar"
                 style={{
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "start",
 
-                    fontSize: "80%",
+                    fontSize: "76%",
+                    position: "absolute",
+                    top: `${
+                        window.innerHeight -
+                        (infoBarRef.current?.clientHeight ?? 20)
+                    }px`,
                 }}
             >
                 <p>
                     E&nbsp;{" "}
                     <a
+                        rel="noreferrer"
                         className="address-link"
                         href="mailto://ppgopalpurhata@gmail.com"
                         target="_blank"
@@ -166,9 +178,14 @@ const Drawer = (props: any): JSX.Element => {
                     </a>
                 </p>
                 <p>T&nbsp; +91 8400042939</p>
-                <p style={{ textAlign: "start" }}>
+                <p
+                    style={{
+                        textAlign: "start",
+                    }}
+                >
                     A&nbsp;{" "}
                     <a
+                        rel="noreferrer"
                         className="address-link"
                         href="https://goo.gl/maps/MCRHtueWwg5PidBs5"
                         target={"_blank"}

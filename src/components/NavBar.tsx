@@ -16,6 +16,7 @@ const pageNames: Array<String> = [
 
 const NavBar = (props: any): JSX.Element => {
     let appCtx = useContext(AppContext);
+    let isPhone = appCtx.screenType.phone;
 
     return (
         <nav
@@ -42,21 +43,35 @@ const NavBar = (props: any): JSX.Element => {
                 borderBottom: props.isHeaderSticky ? "2px solid black" : "none",
             }}
         >
-            <a className="app-link medium-link" onClick={props.onClickMenu}>
-                ☰ MENU
-            </a>
+            <button
+                className="app-link medium-link"
+                onClick={props.onClickMenu}
+            >
+                {isPhone ? "☰" : "☰ MENU"}
+            </button>
             <h1
                 className="school-name"
                 style={{
-                    fontSize: "72px",
+                    fontSize: "7.2rem",
                     fontFamily: "Beattingvile",
                 }}
             >
                 {pageNames[appCtx.pageNumber]}
             </h1>
-            <a className="app-link medium-link" onClick={props.onEnrollNow}>
+            <button
+                style={{ display: isPhone ? "none" : "block" }}
+                className="app-link medium-link"
+                onClick={props.onEnrollNow}
+            >
                 ENROLL NOW
-            </a>
+            </button>
+
+            {/* Helps in keeping the title in center :) */}
+            {isPhone && (
+                <button className="app-link medium-link" style={{ opacity: 0 }}>
+                    {isPhone ? "☰" : "☰ MENU"}
+                </button>
+            )}
         </nav>
     );
 };
