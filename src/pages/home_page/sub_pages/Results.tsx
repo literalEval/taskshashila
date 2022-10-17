@@ -4,7 +4,6 @@ const Results = (): JSX.Element => {
             style={{
                 height: "100vh",
                 padding: "10% 10% 0% 10%",
-
                 backgroundColor: "#f1eee8",
                 zIndex: 2,
             }}
