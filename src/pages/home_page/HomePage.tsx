@@ -18,7 +18,7 @@ import DrawerBack from "../../components/drawer/DrawerBack";
 import EnrollNow from "./sub_pages/EnrollNow";
 import Login from "./sub_pages/Login";
 import Gallery from "./sub_pages/Gallery";
-
+import FeedbackPage from "./sub_pages/FeedbackPage";
 
 const HomePage = (props: any): JSX.Element => {
     const appCtx = useContext(AppContext);
@@ -140,6 +140,7 @@ const HomePage = (props: any): JSX.Element => {
             {appCtx.pageNumber === 5 && <AboutUs />}
             {appCtx.pageNumber === 6 && <Login />}
             {appCtx.pageNumber === 7 && <EnrollNow />}
+            {appCtx.pageNumber === 8 && <FeedbackPage />}
 
             <GoToTopButton show={showUpButt} onClick={scrollToTop} />
             <Footer zIndex={footerZ} />
