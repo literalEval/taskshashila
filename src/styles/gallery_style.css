@@ -1,0 +1,17 @@
+.gallery--img__container {
+    /* filter: blur(1.1px); */
+    transition: filter 200ms;
+    /* background-color: #444; */
+}
+
+.gallery--img__container:hover {
+    filter: blur(0px);
+}
+
+.gallery--img {
+    transition: scale 400ms;
+}
+
+.gallery--img:hover {
+    scale: 1.1;
+}

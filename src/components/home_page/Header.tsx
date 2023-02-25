@@ -41,20 +41,24 @@ const Header = (props: any): JSX.Element => {
             ></img>
             <p
                 style={{
-                    fontFamily: "Samarkan",
-                    fontSize: "11.2rem",
+                    fontFamily: "Raisonne",
+                    fontSize: "8.8rem",
+                    lineHeight: "10.2rem",
+                    // lineHeight: "100%",
                     wordSpacing: "-8px",
                 }}
             >
-                vidya dadati vinayam
+                {/* vidya dadati vinayam */}
+                Learning Today<br></br>Leading Tommorow
             </p>
+            <div style={{ height: "5%" }}></div>
             <button
                 className="app-link app-link--filled medium-link"
                 onClick={props.onClickActivities}
             >
                 Activities
             </button>
-            <div style={{ height: "10%" }}></div>
+            <div style={{ height: "5%" }}></div>
         </header>
     );
 };

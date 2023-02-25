@@ -27,10 +27,7 @@ const Quote = (props: any): JSX.Element => {
             }}
         >
             <blockquote style={{ fontSize: "larger" }}>
-                &ldquo; Lorem ipsum dolor sit amet consectetur, adipisicing
-                elit. Iste, delectus ut aliquid officia, minus iure porro ex
-                esse consequatur magni, autem nihil error quibusdam atque maxime
-                tenetur tempora doloremque consequuntur.&rdquo;
+                &ldquo; {props.authQuote} &rdquo;
             </blockquote>
             <div
                 style={{
@@ -82,6 +79,7 @@ const Highlight = (props: any) => {
             <Quote
                 authName={props.authName}
                 authDesignation={props.authDesignation}
+                authQuote={props.authQuote}
             ></Quote>
         </div>
     );
@@ -117,9 +115,14 @@ const Appreciations = (): JSX.Element => {
                         authName="Pranshu Varshney"
                         authDesignation="Chemical Engineer"
                         authImg={varsh}
-                    >
-                        We love Trendyol orange
-                    </Highlight>
+                        authQuote={
+                            "यह विद्यालय हाटा ब्लॉक के श्रेष्ठ विद्यालयों में से एक " +
+                            "है। यहां अध्यापकों द्वारा बच्चों के सर्वांगीण विकास हेतु " +
+                            "कई प्रकार के नवाचार किए जाते है। मैं समस्त विद्यालय " +
+                            "परिवार को बच्चों के उन्नयन हेतु उच्च स्तरीय प्रयास के " +
+                            "लिए हार्दिक शुभकामनाएं देती हूं।"
+                        }
+                    />
                 </Carousel.Item>
                 <Carousel.Item>
                     <Highlight

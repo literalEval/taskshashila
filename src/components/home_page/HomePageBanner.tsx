@@ -37,10 +37,11 @@ const HomePageBanner = (): JSX.Element => {
                 width: "100%",
                 height: "auto",
 
-                fontSize: "2.4rem",
+                fontSize: "1.8rem",
                 backgroundColor: "black",
                 color: "white",
 
+                padding: "0.8rem 0%",
                 position: "absolute",
                 top: `${selfHeight}px`,
                 zIndex: "4",

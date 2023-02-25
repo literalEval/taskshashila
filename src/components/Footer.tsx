@@ -87,9 +87,11 @@ const Footer = (props: any): JSX.Element => {
                 <div
                     style={{
                         backgroundImage: `url(${dep_logo})`,
-                        backgroundSize: "100% 100%",
-                        width: isPhone ? "40vw" : "25vh",
-                        height: isPhone ? "40vw" : "25vh",
+                        backgroundSize: "110% auto",
+                        backgroundRepeat: "no-repeat",
+                        padding: "auto",
+                        width: isPhone ? "40vw" : "28vh",
+                        height: isPhone ? "40vw" : "28vh",
                     }}
                 ></div>
                 <AddressBlock isPhone={isPhone} />
