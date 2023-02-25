@@ -12,6 +12,7 @@ const pageNames: Array<String> = [
     "About Us",
     "Admin Login",
     "Enroll Now",
+    "Feedback",
 ];
 
 const NavBar = (props: any): JSX.Element => {
