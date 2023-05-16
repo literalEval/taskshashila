@@ -15,6 +15,10 @@ const AppContext = createContext({
         tablet: boolean;
         laptop: boolean;
     }): void {},
+    showGallery: false,
+    setShowGallery: function (shouldShow: boolean): void {},
+    currentGalleryImg: "",
+    setCurrentGalleryImg: function (src: string): void {},
 });
 
 export { ScreenType };

@@ -15,3 +15,16 @@
 .gallery--img:hover {
     scale: 1.1;
 }
+
+/************************************
+        GALLERY MODAL STYLES
+************************************/
+
+.slide-button {
+    transition-property: background-color;
+    transition-duration: 300ms;
+}
+
+.slide-button:hover {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+}
