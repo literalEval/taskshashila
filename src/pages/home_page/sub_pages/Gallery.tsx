@@ -15,13 +15,15 @@ import ten from "../../../assets/images/gallery/10.jpg";
 import eleven from "../../../assets/images/gallery/11.jpg";
 import twelve from "../../../assets/images/gallery/12.jpg";
 
-const ImageColumn = (
-    props: any
-    // img_one: string,
-    // img_two: string,
-    // reverse: boolean = false
-): JSX.Element => {
+const ImageColumn = (props: any): JSX.Element => {
     let isPhone = useContext(AppContext).screenType.phone;
+    const appCtx = useContext(AppContext);
+
+    const onClickImg = (src: string) => {
+        appCtx.setCurrentGalleryImg(src);
+        appCtx.setShowGallery(true);
+        console.log("clicked");
+    };
 
     return (
         <div
@@ -38,6 +40,7 @@ const ImageColumn = (
                     height: isPhone ? "10vh" : "30vh",
                     overflow: "hidden",
                 }}
+                onClick={() => onClickImg(props.img_one)}
             >
                 <img
                     className="gallery--img"
@@ -52,6 +55,7 @@ const ImageColumn = (
                     height: isPhone ? "20vh" : "60vh",
                     overflow: "hidden",
                 }}
+                onClick={() => onClickImg(props.img_two)}
             >
                 <img
                     className="gallery--img"

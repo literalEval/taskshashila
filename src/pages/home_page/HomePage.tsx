@@ -19,6 +19,7 @@ import EnrollNow from "./sub_pages/EnrollNow";
 import Login from "./sub_pages/Login";
 import Gallery from "./sub_pages/Gallery";
 import FeedbackPage from "./sub_pages/FeedbackPage";
+import GalleryModal from "../../components/home_page/GalleryModal";
 
 const HomePage = (props: any): JSX.Element => {
     const appCtx = useContext(AppContext);
@@ -144,6 +145,8 @@ const HomePage = (props: any): JSX.Element => {
 
             <GoToTopButton show={showUpButt} onClick={scrollToTop} />
             <Footer zIndex={footerZ} />
+
+            {appCtx.showGallery && <GalleryModal/>}
         </React.Fragment>
     );
 };
