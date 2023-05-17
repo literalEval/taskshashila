@@ -13,7 +13,7 @@ const tryFirebaseLogin = async (
     // await createUserWithEmailAndPassword(appAuth, email!, password!);
 
     // console.log(
-    await signInWithEmailAndPassword(appAuth, email!, password!);
+    // await signInWithEmailAndPassword(appAuth, email!, password!);
     // );
 
     return true;
