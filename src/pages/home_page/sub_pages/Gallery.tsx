@@ -1,14 +1,8 @@
 import "../../../styles/gallery_style.css";
 import { useContext } from "react";
 import AppContext from "../../../context/app_context";
-import { useState, useEffect } from "react";
-import firebase from "../../../firebaseConfig";
-
-// firebase configure
-const db = firebase.firestore();
-
-const collectionName = "imageData";
-const collectionID = "GcxC9QVKto25WVVYH8qL";
+import { useState } from "react";
+import { fetchData,firebase } from "../../../firebase/firebase";
 
 const ImageColumn = (props: any): JSX.Element => {
     let isPhone = useContext(AppContext).screenType.phone;
@@ -99,26 +93,7 @@ const Gallery = (): JSX.Element => {
     const [imgData, setImgData] = useState<
         firebase.firestore.DocumentData | undefined
     >(undefined);
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const doc = await db
-                    .collection(collectionName)
-                    .doc(collectionID)
-                    .get();
-                if (doc.exists) {
-                    const retrievedData = doc.data();
-                    setImgData(retrievedData);
-                } else {
-                    console.log("Document Not Found");
-                }
-            } catch (error) {
-                console.log(error);
-            }
-        };
-        fetchData();
-    }, []);
-
+    fetchData().then((retrievedData)=>{setImgData(retrievedData)}).catch(err=>{console.log(err)})
     return (
         <section
             style={{
@@ -150,3 +125,4 @@ const Gallery = (): JSX.Element => {
 };
 
 export default Gallery;
+
