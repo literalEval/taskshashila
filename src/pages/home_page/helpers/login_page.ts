@@ -1,6 +1,6 @@
 // import { createUserWithEmailAndPassword } from "firebase/auth";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { appAuth } from "../../../firebase/firebase";
+// import { appAuth } from "../../../firebase/firebase";
 
 const tryFirebaseLogin = async (
     email: string | undefined,
@@ -13,7 +13,7 @@ const tryFirebaseLogin = async (
     // await createUserWithEmailAndPassword(appAuth, email!, password!);
 
     // console.log(
-    await signInWithEmailAndPassword(appAuth, email!, password!);
+    // await signInWithEmailAndPassword(appAuth, email!, password!);
     // );
 
     return true;

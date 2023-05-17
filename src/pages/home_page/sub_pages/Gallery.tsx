@@ -1,19 +1,14 @@
 import "../../../styles/gallery_style.css";
 import { useContext } from "react";
 import AppContext from "../../../context/app_context";
+import { useState, useEffect } from "react";
+import firebase from "../../../firebaseConfig";
 
-import one from "../../../assets/images/gallery/1.jpg";
-import two from "../../../assets/images/gallery/2.jpg";
-import three from "../../../assets/images/gallery/3.jpg";
-import four from "../../../assets/images/gallery/4.jpg";
-import five from "../../../assets/images/gallery/5.jpg";
-import six from "../../../assets/images/gallery/6.jpg";
-import seven from "../../../assets/images/gallery/7.jpg";
-import eight from "../../../assets/images/gallery/8.jpg";
-import nine from "../../../assets/images/gallery/9.jpg";
-import ten from "../../../assets/images/gallery/10.jpg";
-import eleven from "../../../assets/images/gallery/11.jpg";
-import twelve from "../../../assets/images/gallery/12.jpg";
+// firebase configure
+const db = firebase.firestore();
+
+const collectionName = "imageData";
+const collectionID = "GcxC9QVKto25WVVYH8qL";
 
 const ImageColumn = (props: any): JSX.Element => {
     let isPhone = useContext(AppContext).screenType.phone;
@@ -22,9 +17,9 @@ const ImageColumn = (props: any): JSX.Element => {
     const onClickImg = (src: string) => {
         appCtx.setCurrentGalleryImg(src);
         appCtx.setShowGallery(true);
+
         console.log("clicked");
     };
-
     return (
         <div
             style={{
@@ -101,6 +96,28 @@ const ImageGrid = (
 
 const Gallery = (): JSX.Element => {
     let isPhone = useContext(AppContext).screenType.phone;
+    const [imgData, setImgData] = useState<
+        firebase.firestore.DocumentData | undefined
+    >(undefined);
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const doc = await db
+                    .collection(collectionName)
+                    .doc(collectionID)
+                    .get();
+                if (doc.exists) {
+                    const retrievedData = doc.data();
+                    setImgData(retrievedData);
+                } else {
+                    console.log("Document Not Found");
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        fetchData();
+    }, []);
 
     return (
         <section
@@ -113,20 +130,20 @@ const Gallery = (): JSX.Element => {
             }}
         >
             <ImageGrid
-                img_one={one}
-                img_two={two}
-                img_three={three}
-                img_four={four}
-                img_five={five}
-                img_six={six}
+                img_one={imgData?.img_one}
+                img_two={imgData?.img_two}
+                img_three={imgData?.img_three}
+                img_four={imgData?.img_four}
+                img_five={imgData?.img_five}
+                img_six={imgData?.img_six}
             />
             <ImageGrid
-                img_one={seven}
-                img_two={eight}
-                img_three={nine}
-                img_four={ten}
-                img_five={eleven}
-                img_six={twelve}
+                img_one={imgData?.img_seven}
+                img_two={imgData?.img_eight}
+                img_three={imgData?.img_nine}
+                img_four={imgData?.img_ten}
+                img_five={imgData?.img_eleven}
+                img_six={imgData?.img_twelve}
             />
         </section>
     );
