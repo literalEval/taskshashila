@@ -1,7 +1,6 @@
 import "../../../styles/gallery_style.css";
-import { useContext } from "react";
+import { useContext,useState} from "react";
 import AppContext from "../../../context/app_context";
-import { useState } from "react";
 import { fetchData,firebase } from "../../../firebase/firebase";
 
 
