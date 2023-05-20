@@ -89,9 +89,10 @@ const ImageGrid = (
 
 const Gallery = (): JSX.Element => {
     let isPhone = useContext(AppContext).screenType.phone;
-    const [imgData, setImgData] = useState<
+    let [imgData, setImgData] = useState<
         firebase.firestore.DocumentData | undefined
     >(undefined);
+    imgData = {};
     fetchData()
         .then((retrievedData) => {
             setImgData(retrievedData);
@@ -110,20 +111,20 @@ const Gallery = (): JSX.Element => {
             }}
         >
             <ImageGrid
-                img_one={imgData?.img_one}
-                img_two={imgData?.img_two}
-                img_three={imgData?.img_three}
-                img_four={imgData?.img_four}
-                img_five={imgData?.img_five}
-                img_six={imgData?.img_six}
+                img_one={imgData[0]}
+                img_two={imgData[1]}
+                img_three={imgData[2]}
+                img_four={imgData[3]}
+                img_five={imgData[4]}
+                img_six={imgData[5]}
             />
             <ImageGrid
-                img_one={imgData?.img_seven}
-                img_two={imgData?.img_eight}
-                img_three={imgData?.img_nine}
-                img_four={imgData?.img_ten}
-                img_five={imgData?.img_eleven}
-                img_six={imgData?.img_twelve}
+                img_one={imgData[6]}
+                img_two={imgData[7]}
+                img_three={imgData[8]}
+                img_four={imgData[9]}
+                img_five={imgData[10]}
+                img_six={imgData[11]}
             />
         </section>
     );
