@@ -1,8 +1,7 @@
 import "../../../styles/gallery_style.css";
-import { useContext,useState} from "react";
+import { useContext, useState } from "react";
 import AppContext from "../../../context/app_context";
-import { fetchData,firebase } from "../../../firebase/firebase";
-
+import { fetchData, firebase } from "../../../firebase/firebase";
 
 const ImageColumn = (props: any): JSX.Element => {
     let isPhone = useContext(AppContext).screenType.phone;
@@ -93,7 +92,13 @@ const Gallery = (): JSX.Element => {
     const [imgData, setImgData] = useState<
         firebase.firestore.DocumentData | undefined
     >(undefined);
-    fetchData().then((retrievedData)=>{setImgData(retrievedData)}).catch(err=>{console.log(err)})
+    fetchData()
+        .then((retrievedData) => {
+            setImgData(retrievedData);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
     return (
         <section
             style={{
@@ -125,4 +130,3 @@ const Gallery = (): JSX.Element => {
 };
 
 export default Gallery;
-
