@@ -100,6 +100,7 @@ const Gallery = (): JSX.Element => {
         .catch((err) => {
             console.log(err);
         });
+
     return (
         <section
             style={{
@@ -110,22 +111,16 @@ const Gallery = (): JSX.Element => {
                 zIndex: 2,
             }}
         >
-            <ImageGrid
-                img_one={imgData[0]}
-                img_two={imgData[1]}
-                img_three={imgData[2]}
-                img_four={imgData[3]}
-                img_five={imgData[4]}
-                img_six={imgData[5]}
+           {imgData.map((index:any,item:any)=>{
+          <ImageGrid
+                img_one={imgData?imgData[index]:null}
+                img_two={imgData?imgData[index+1]:null}
+                img_three={imgData?imgData[index+2]:null}
+                img_four={imgData?imgData[index+3]:null}
+                img_five={imgData?imgData[index+4]:null}
+                img_six={imgData?imgData[index+5]:null}
             />
-            <ImageGrid
-                img_one={imgData[6]}
-                img_two={imgData[7]}
-                img_three={imgData[8]}
-                img_four={imgData[9]}
-                img_five={imgData[10]}
-                img_six={imgData[11]}
-            />
+           })}
         </section>
     );
 };
