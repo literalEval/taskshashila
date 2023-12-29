@@ -1,142 +1,69 @@
-import React from "react";
-import Carousel from "react-bootstrap/Carousel";
+import { useContext } from "react";
 
-import varsh from "../../../assets/images/varsh.jpg";
-import upsc from "../../../assets/images/img.jpg";
-import eskimo from "../../../assets/images/eskimo.jpg";
+import sarita from "../../../assets/images/sarita.jpg";
+import preeti from "../../../assets/images/preeti.jpg";
+import pintoo from "../../../assets/images/pintoo.jpg";
+
 import "../../../styles/misc.css";
-
-const Quote = (props: any): JSX.Element => {
-    return (
-        <div
-            style={{
-                width: "40%",
-                height: "100%",
-                padding: "3% 5% 3% 0",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                alignItems: "end",
-
-                color: "white",
-                fontSize: "22px",
-            }}
-        >
-            <blockquote style={{ fontSize: "larger" }}>
-                &ldquo; Lorem ipsum dolor sit amet consectetur, adipisicing
-                elit. Iste, delectus ut aliquid officia, minus iure porro ex
-                esse consequatur magni, autem nihil error quibusdam atque maxime
-                tenetur tempora doloremque consequuntur.&rdquo;
-            </blockquote>
-            <div
-                style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "end",
-                }}
-            >
-                <p style={{ padding: "0px", margin: "0px" }}>
-                    {props.authName}
-                </p>
-                <p style={{ fontSize: "smaller" }}>{props.authDesignation}</p>
-            </div>
-        </div>
-    );
-};
-
-const Highlight = (props: any) => {
-    return (
-        <div
-            style={{
-                backgroundColor: props.color,
-                height: "48vh",
-                width: "100%",
-                margin: "auto",
-
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "space-around",
-
-                borderRadius: "12px",
-            }}
-        >
-            <img
-                alt="Faculty"
-                src={props.authImg}
-                style={{
-                    width: "35%",
-                    height: "auto",
-                    overflow: "visible",
-                    borderRadius: "12px",
-                }}
-            ></img>
-            <Quote
-                authName={props.authName}
-                authDesignation={props.authDesignation}
-            ></Quote>
-        </div>
-    );
-};
+import AppContext from "../../../context/app_context";
+import MCarousel from "../../../components/MCarousel";
 
 const Faculty = (): JSX.Element => {
+    let isPhone = useContext(AppContext).screenType.phone;
+
     return (
         <section
             style={{
-                height: "100vh",
-                padding: "10% 10% 0% 10%",
+                height: isPhone ? "auto" : "100vh",
+                padding: `4% ${isPhone ? "10%" : "20%"} ${
+                    isPhone ? "20%" : "4%"
+                } ${isPhone ? "10%" : "20%"}`,
 
                 backgroundColor: "#f1eee8",
                 zIndex: 2,
             }}
         >
-            {/* <h1 style={{ fontSize: "96px", textDecoration: "underline" }}>
-                Our Faculty
-            </h1> */}
-            <div style={{ height: "5vh" }}></div>
-            {/* <div
-                style={{
-                    backgroundColor: "black",
-                    width: "100%",
-                    height: "4px",
-                }}
-            ></div> */}
-            <div style={{ height: "5vh" }}></div>
-            <Carousel style={{ width: "86%", translate: "7% 0" }}>
-                <Carousel.Item>
-                    <Highlight
-                        className=""
-                        color="#a5352b"
-                        authName="Pranshu Varshney"
-                        authDesignation="Chemical Engineer"
-                        authImg={varsh}
-                    >
-                        We love Trendyol orange
-                    </Highlight>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <Highlight
-                        className=""
-                        color="#917e1f"
-                        authName="Prakhar Dubey"
-                        authDesignation="Former Eskimo"
-                        authImg={eskimo}
-                    >
-                        This is our github
-                    </Highlight>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <Highlight
-                        className=""
-                        color="#3e76ac"
-                        authName="Ravishankar Pandey"
-                        authDesignation="UPSC Aspirant"
-                        authImg={upsc}
-                    >
-                        We love Trendyol green
-                    </Highlight>
-                </Carousel.Item>
-            </Carousel>
+            <div style={{ height: "14vh" }}></div>
+            <MCarousel
+                items={[
+                    {
+                        color: "#a5352b",
+                        authName: "Smt. Sarita Vaishya",
+                        authDesignation: "Head Master",
+                        authImg: sarita,
+                        authQuote:
+                            "यह विद्यालय हाटा ब्लॉक के श्रेष्ठ विद्यालयों में से एक " +
+                            "है। यहां अध्यापकों द्वारा बच्चों के सर्वांगीण विकास हेतु " +
+                            "कई प्रकार के नवाचार किए जाते है। मैं समस्त विद्यालय " +
+                            "परिवार को बच्चों के उन्नयन हेतु उच्च स्तरीय प्रयास के " +
+                            "लिए हार्दिक शुभकामनाएं देती हूं।",
+                    },
+                    {
+                        color: "#917e1f",
+                        authName: "Mr Pintoo Dubey",
+                        authDesignation: "Assistant Teacher",
+                        authImg: pintoo,
+                        authQuote:
+                            "यह विद्यालय हाटा ब्लॉक के श्रेष्ठ विद्यालयों में से एक " +
+                            "है। यहां अध्यापकों द्वारा बच्चों के सर्वांगीण विकास हेतु " +
+                            "कई प्रकार के नवाचार किए जाते है। मैं समस्त विद्यालय " +
+                            "परिवार को बच्चों के उन्नयन हेतु उच्च स्तरीय प्रयास के " +
+                            "लिए हार्दिक शुभकामनाएं देती हूं।",
+                    },
+                    {
+                        color: "#3e76ac",
+                        authName: "Smt. Preeti",
+                        authDesignation: "Assistant Teacher",
+                        authImg: preeti,
+                        authQuote:
+                            "यह विद्यालय हाटा ब्लॉक के श्रेष्ठ विद्यालयों में से एक " +
+                            "है। यहां अध्यापकों द्वारा बच्चों के सर्वांगीण विकास हेतु " +
+                            "कई प्रकार के नवाचार किए जाते है। मैं समस्त विद्यालय " +
+                            "परिवार को बच्चों के उन्नयन हेतु उच्च स्तरीय प्रयास के " +
+                            "लिए हार्दिक शुभकामनाएं देती हूं।",
+                    },
+                ]}
+            ></MCarousel>
         </section>
     );
 };
