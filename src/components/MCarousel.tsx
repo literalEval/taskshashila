@@ -86,12 +86,7 @@ const MCarousel = (props: any): JSX.Element => {
     let isPhone = useContext(AppContext).screenType.phone;
 
     return (
-        <Carousel
-            style={{
-                width: isPhone ? "110%" : "120%",
-                translate: isPhone ? "-5% 0" : "-10% 0",
-            }}
-        >
+        <Carousel style={{ ...props.style }}>
             {props.items.map((item: any) => {
                 return (
                     <Carousel.Item>
@@ -106,44 +101,6 @@ const MCarousel = (props: any): JSX.Element => {
                     </Carousel.Item>
                 );
             })}
-            {/* <Carousel.Item>
-                    <Highlight
-                        className=""
-                        color="#a5352b"
-                        authName="Smt. Reeta Gupta"
-                        authDesignation="Block Education Officer"
-                        authImg={varsh}
-                        authQuote={
-                            "यह विद्यालय हाटा ब्लॉक के श्रेष्ठ विद्यालयों में से एक " +
-                            "है। यहां अध्यापकों द्वारा बच्चों के सर्वांगीण विकास हेतु " +
-                            "कई प्रकार के नवाचार किए जाते है। मैं समस्त विद्यालय " +
-                            "परिवार को बच्चों के उन्नयन हेतु उच्च स्तरीय प्रयास के " +
-                            "लिए हार्दिक शुभकामनाएं देती हूं।"
-                        }
-                    />
-                </Carousel.Item>
-                <Carousel.Item>
-                    <Highlight
-                        className=""
-                        color="#917e1f"
-                        authName="Prakhar Dubey"
-                        authDesignation="Former Eskimo"
-                        authImg={eskimo}
-                    >
-                        This is our github
-                    </Highlight>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <Highlight
-                        className=""
-                        color="#3e76ac"
-                        authName="Ravishankar Pandey"
-                        authDesignation="UPSC Aspirant"
-                        authImg={upsc}
-                    >
-                        We love Trendyol green
-                    </Highlight>
-                </Carousel.Item> */}
         </Carousel>
     );
 };

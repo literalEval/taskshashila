@@ -15,9 +15,15 @@ const Faculty = (): JSX.Element => {
         <section
             style={{
                 height: isPhone ? "auto" : "100vh",
+                width: "100%",
                 padding: `4% ${isPhone ? "10%" : "20%"} ${
                     isPhone ? "20%" : "4%"
                 } ${isPhone ? "10%" : "20%"}`,
+
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
 
                 backgroundColor: "#f1eee8",
                 zIndex: 2,
