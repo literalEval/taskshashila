@@ -31,6 +31,8 @@ const Faculty = (): JSX.Element => {
         >
             <div style={{ height: "14vh" }}></div>
             <MCarousel
+                style={{ whiteSpace: "pre-line" }}
+                longText={true}
                 items={[
                     {
                         color: "#a5352b",
@@ -38,11 +40,9 @@ const Faculty = (): JSX.Element => {
                         authDesignation: "Head Master",
                         authImg: sarita,
                         authQuote:
-                            "यह विद्यालय हाटा ब्लॉक के श्रेष्ठ विद्यालयों में से एक " +
-                            "है। यहां अध्यापकों द्वारा बच्चों के सर्वांगीण विकास हेतु " +
-                            "कई प्रकार के नवाचार किए जाते है। मैं समस्त विद्यालय " +
-                            "परिवार को बच्चों के उन्नयन हेतु उच्च स्तरीय प्रयास के " +
-                            "लिए हार्दिक शुभकामनाएं देती हूं।",
+                            "Intermediate - Shri Gandhi Smarak Inter College, Hata\n" +
+                            "Grad/Post Grad - DDU, Gorakhpur\n" +
+                            "B. Ed. - DDU, Gorakhpur",
                     },
                     {
                         color: "#917e1f",
@@ -50,11 +50,9 @@ const Faculty = (): JSX.Element => {
                         authDesignation: "Assistant Teacher",
                         authImg: pintoo,
                         authQuote:
-                            "यह विद्यालय हाटा ब्लॉक के श्रेष्ठ विद्यालयों में से एक " +
-                            "है। यहां अध्यापकों द्वारा बच्चों के सर्वांगीण विकास हेतु " +
-                            "कई प्रकार के नवाचार किए जाते है। मैं समस्त विद्यालय " +
-                            "परिवार को बच्चों के उन्नयन हेतु उच्च स्तरीय प्रयास के " +
-                            "लिए हार्दिक शुभकामनाएं देती हूं।",
+                            "Intermediate - Shri Gandhi Smarak Inter College, Hata\n" +
+                            "Grad/Post Grad - Buddha P.G. College, Kushinagar\n" +
+                            "B. Ed. - DDU, Gorakhpur",
                     },
                     {
                         color: "#3e76ac",
@@ -62,11 +60,10 @@ const Faculty = (): JSX.Element => {
                         authDesignation: "Assistant Teacher",
                         authImg: preeti,
                         authQuote:
-                            "यह विद्यालय हाटा ब्लॉक के श्रेष्ठ विद्यालयों में से एक " +
-                            "है। यहां अध्यापकों द्वारा बच्चों के सर्वांगीण विकास हेतु " +
-                            "कई प्रकार के नवाचार किए जाते है। मैं समस्त विद्यालय " +
-                            "परिवार को बच्चों के उन्नयन हेतु उच्च स्तरीय प्रयास के " +
-                            "लिए हार्दिक शुभकामनाएं देती हूं।",
+                            "Intermediate - KPC, Kashipur\n" +
+                            "Grad. - Radhe Hari P.G. Gov. College\n" +
+                            "Post Grad. - Kumayun University\n" +
+                            "B. Ed. - Subharati University, Merath",
                     },
                 ]}
             ></MCarousel>

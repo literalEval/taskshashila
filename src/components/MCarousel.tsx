@@ -10,7 +10,7 @@ const Quote = (props: any): JSX.Element => {
     return (
         <div
             style={{
-                width: isPhone ? "90%" : "40%",
+                width: isPhone ? "90%" : props.longText ? "50%" : "40%",
                 height: "100%",
                 padding: "3% 5% 3% 5%",
                 translate: isPhone ? "0 -5%" : "0 0",
@@ -77,6 +77,7 @@ const Highlight = (props: any) => {
                 authName={props.authName}
                 authDesignation={props.authDesignation}
                 authQuote={props.authQuote}
+                longText={props.longText}
             ></Quote>
         </div>
     );
@@ -97,6 +98,7 @@ const MCarousel = (props: any): JSX.Element => {
                             authDesignation={item.authDesignation}
                             authImg={item.authImg}
                             authQuote={item.authQuote}
+                            longText={props.longText ?? false}
                         />
                     </Carousel.Item>
                 );
