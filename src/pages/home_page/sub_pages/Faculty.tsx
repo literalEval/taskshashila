@@ -56,14 +56,14 @@ const Faculty = (): JSX.Element => {
                     },
                     {
                         color: "#3e76ac",
-                        authName: "Smt. Preeti",
+                        authName: "Smt. Preeti Tiwari",
                         authDesignation: "Assistant Teacher",
                         authImg: preeti,
                         authQuote:
                             "Intermediate - KPC, Kashipur\n" +
                             "Grad. - Radhe Hari P.G. Gov. College\n" +
                             "Post Grad. - Kumayun University\n" +
-                            "B. Ed. - Subharati University, Merath",
+                            "B. Ed. - Subharati University, Meerut",
                     },
                 ]}
             ></MCarousel>
